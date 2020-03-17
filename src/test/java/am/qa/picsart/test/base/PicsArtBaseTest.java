@@ -35,6 +35,7 @@ public class PicsArtBaseTest {
 			page.clicOnPopUp();
 			Thread.sleep(1000);
 	        page.clickOnLoginButton();
+	        //driver.get("https://picsart.com/#");
 	        PicsArtLoginPage loginPage = new PicsArtLoginPage(driver);
 	        loginPage.signIn();
 	        PicsArtUserPage userPage = new PicsArtUserPage(driver);

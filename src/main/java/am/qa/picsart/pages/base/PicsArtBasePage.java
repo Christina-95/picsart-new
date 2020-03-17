@@ -12,8 +12,7 @@ import am.qa.picsart.pages.login.PicsArtLoginPage;
 
 public class PicsArtBasePage {
 	
-	protected static final String CLOSE_POP_UP = "//div[@id='modal-body']/div[2]";
-			//"//div[@class='modal-close js-close-button']";
+	protected static final String CLOSE_POP_UP = "//div[@class='modal-close js-close-button']";
 	protected final String LOGIN_BUTTON_XPATH = "//a[@data-js-ga-click='sign-in']";
 	
 	@FindBy (xpath = LOGIN_BUTTON_XPATH)
@@ -45,7 +44,7 @@ public class PicsArtBasePage {
 	}
 
 	public void clicOnPopUp() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		moveToElement(closePopUp);
 		closePopUp.click();
 	}

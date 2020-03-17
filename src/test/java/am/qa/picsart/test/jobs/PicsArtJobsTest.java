@@ -21,7 +21,7 @@ public class PicsArtJobsTest extends PicsArtBaseTest {
 		PicsArtJobsPage jobsPage = new PicsArtJobsPage(driver);
 		jobsPage.clickOnViewJobsButton();
 		//Validate that the current vacancies are displayed
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		Assert.assertTrue(jobsPage.departmentsText.isDisplayed());
 	}
 
