@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import am.qa.picsart.pages.base.PicsArtBasePage;
+import am.qa.picsart.pages.jobs.vacancies.PicsArtVacanciesPage;
 
 public class PicsArtJobsPage extends PicsArtBasePage{
 
@@ -17,6 +18,7 @@ public class PicsArtJobsPage extends PicsArtBasePage{
 	protected final String PICSART_JOBS_URL = "https://picsart.com/jobs";
 	protected final String VIEW_JOBS_BUTTON = "/html/body/div[3]/div/div[1]/div/div/a";
 	protected final String DEPARTMENTS_TXT = "//label[@class='title'][contains(text(),'Departments')]";
+	protected final String CONTINUE_ON_JOBS_BUTTON = "//a[contains(text(),'Continue on Jobs')]";
 	
 	
 	@FindBy (xpath = VIEW_JOBS_BUTTON)
@@ -24,6 +26,9 @@ public class PicsArtJobsPage extends PicsArtBasePage{
 	
 	@FindBy (xpath = DEPARTMENTS_TXT)
 	public WebElement departmentsText;
+	
+	@FindBy (xpath = CONTINUE_ON_JOBS_BUTTON)
+	WebElement continueOnJobsButton;
 	
 	public PicsArtJobsPage clickOnViewJobsButton() throws InterruptedException {
 		driver.get(PICSART_JOBS_URL);
@@ -38,6 +43,13 @@ public class PicsArtJobsPage extends PicsArtBasePage{
 		if (departmentsText.isDisplayed())
 		return true;
 		else return false;	
+	}
+	
+	public PicsArtVacanciesPage clickOnContinueOnJobsBtn() throws InterruptedException {
+		Thread.sleep(2000);
+		continueOnJobsButton.click();
+		System.out.println("Continue On Jobs Button was clicked");
+		return new PicsArtVacanciesPage(driver);
 	}
 
 }
