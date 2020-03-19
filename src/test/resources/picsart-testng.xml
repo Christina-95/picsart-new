@@ -4,13 +4,13 @@
 		<classes>
 			<class name="am.qa.picsart.test.jobs.PicsArtJobsTest">
 				<methods>
-					<!--  <include name="testCareersLink" />-->
-					<include name="testVacanciesPage" />
-					<include name="" />
-					<include name="" />
-					<include name="" />
-					<include name="" />
-					<include name="" />
+					<include name="testCareersLink" />
+					<include name="testVacanciesPage" /> 
+					<include name="testVacanciesByDepartmentsAndLocation" />
+					<include name="testEditingTools" />
+					<include name="testRemoveBackground" />
+					<include name="testGoToToolsBtn" />
+					<include name="testUserPosts" />
 				</methods>
 
 

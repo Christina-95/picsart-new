@@ -1,5 +1,6 @@
 package am.qa.picsart.pages.jobs;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +20,9 @@ public class PicsArtJobsPage extends PicsArtBasePage{
 	protected final String VIEW_JOBS_BUTTON = "/html/body/div[3]/div/div[1]/div/div/a";
 	protected final String DEPARTMENTS_TXT = "//label[@class='title'][contains(text(),'Departments')]";
 	protected final String CONTINUE_ON_JOBS_BUTTON = "//a[contains(text(),'Continue on Jobs')]";
-	
+	protected final String ENGINEERING_LINK ="//label[contains(text(),'Engineering')]";
+	protected final String YEREVAN_LINK = "//li[@class='opt location_yerevan']";
+
 	
 	@FindBy (xpath = VIEW_JOBS_BUTTON)
 	WebElement viewJobsButton;
@@ -29,6 +32,13 @@ public class PicsArtJobsPage extends PicsArtBasePage{
 	
 	@FindBy (xpath = CONTINUE_ON_JOBS_BUTTON)
 	WebElement continueOnJobsButton;
+	
+	@FindBy (xpath = ENGINEERING_LINK)
+	WebElement engineeringLink;
+	
+	@FindBy (xpath = YEREVAN_LINK)
+	WebElement yerevanLink;
+	
 	
 	public PicsArtJobsPage clickOnViewJobsButton() throws InterruptedException {
 		driver.get(PICSART_JOBS_URL);
@@ -51,5 +61,14 @@ public class PicsArtJobsPage extends PicsArtBasePage{
 		System.out.println("Continue On Jobs Button was clicked");
 		return new PicsArtVacanciesPage(driver);
 	}
+	
+	public void clickOnEngineeringLink() throws InterruptedException {
+		Thread.sleep(2000);
+		engineeringLink.click();
+	}
 
+	public void clickOnYerevanLink() throws InterruptedException {
+		Thread.sleep(2000);
+		yerevanLink.click();
+	}
 }
