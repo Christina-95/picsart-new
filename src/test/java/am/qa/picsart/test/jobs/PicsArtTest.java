@@ -15,7 +15,7 @@ import am.qa.picsart.pages.jobs.vacancies.PicsArtVacanciesPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 
-public class PicsArtJobsTest extends PicsArtBaseTest {
+public class PicsArtTest extends PicsArtBaseTest {
 	
 	
 	@Test
