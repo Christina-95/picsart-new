@@ -37,7 +37,8 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String COLLECTION_NAME_FIELD = "//input[@type='text']";
 	protected final String X_BUTTON = "//span[@class='c-close-trigger js-close-preview svg-close close-modal']";
 	protected final String COLLECTIONS_LINK = "//a[contains(.,'0Collections')]";
-	public String LAST_CREATED_COLLECTION = "//a[@class=\"content clearfix\"]//*[text()='"+collectionName+"']";		
+	public String LAST_CREATED_COLLECTION = "//a[@class=\"content clearfix\"]//*[text()='"+collectionName+"']";	
+	protected final String PICSART_STORE_LINK = "//a[contains(text(),'PicsArt Store')]";
 	
 	
 	
@@ -85,6 +86,9 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	
 	@FindBy (xpath = COLLECTIONS_LINK)
 	public WebElement collectionsLink;
+	
+	@FindBy (xpath = PICSART_STORE_LINK)
+	public WebElement picsArtStoreLink;
 	
 	
 	
@@ -157,6 +161,12 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	
 	public PicsArtUserPage clickTheCollectionsLink() {
 		collectionsLink.click();
+		return new PicsArtUserPage(driver);
+	}
+	
+	
+	public PicsArtUserPage clickOnPicsArtStoreLink() {
+		picsArtStoreLink.click();
 		return new PicsArtUserPage(driver);
 	}
 }

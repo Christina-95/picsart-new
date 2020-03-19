@@ -1,4 +1,4 @@
-package am.qa.picsart.test.jobs;
+package am.qa.picsart.test;
 
 
 import org.openqa.selenium.interactions.Actions;
@@ -239,6 +239,8 @@ public class PicsArtTest extends PicsArtBaseTest {
 		//when the user selects any of her/his posted images and Click on the"Save to Collection"
 		//then the user can save the image/sticker in the existing or in the newly created collection
 		
+		
+		//Login with correct credentials -- Done in PicsArtBaseTest
 		//10.1.Click on the user avatar beside "Get the app" button
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		userPage.clickOnUserAvatar();
@@ -271,6 +273,24 @@ public class PicsArtTest extends PicsArtBaseTest {
 		driver.get("https://picsart.com/u/tinat6043/collections");
 		//validate that the collection was saved
 		Assert.assertFalse(userPage.LAST_CREATED_COLLECTION.isEmpty());
+	
+	}
+	
+	@Test
+	public void testPicsArtStoreLink() {
+		//Tets Case ID:11
+		//Given that the user is authenticated
+		//when the user selects the "PicsArt Store"
+		//then the user is redirected to zazzle.com/store/picsart page
 		
+		//Login with correct credentials -- Done in PicsArtBaseTest
+		//11.1.Click on the "PicsArt Store" link
+		String zazzlePage = "https://www.zazzle.com/store/picsart";
+		PicsArtUserPage userPage = new PicsArtUserPage(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(userPage.picsArtStoreLink));
+		userPage.clickOnPicsArtStoreLink();
+		//validate that the zazzle.com/store/picsart page is displayed
+		Assert.assertTrue(!zazzlePage.isEmpty());
 	}
 }
