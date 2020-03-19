@@ -20,8 +20,7 @@ public class PicsArtBaseTest {
 		protected static final String HOME_PAGE_URL = "https://picsart.com";
 		protected Properties properties;
 		protected WebDriver driver; 
-		
-
+	
 		
 		@BeforeTest()
 		public void prepareEnv() throws IOException, InterruptedException {
