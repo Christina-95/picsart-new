@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import am.qa.picsart.pages.base.PicsArtBasePage;
 import am.qa.picsart.pages.editingtools.PicsArtEditingToolsPage;
 import am.qa.picsart.pages.jobs.PicsArtJobsPage;
+import am.qa.picsart.pages.support.PicsArtSupportPage;
 
 public class PicsArtUserPage extends PicsArtBasePage{
 
@@ -39,6 +40,8 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String COLLECTIONS_LINK = "//a[contains(.,'0Collections')]";
 	public String LAST_CREATED_COLLECTION = "//a[@class=\"content clearfix\"]//*[text()='"+collectionName+"']";	
 	protected final String PICSART_STORE_LINK = "//a[contains(text(),'PicsArt Store')]";
+	protected final String SUPPORT_LINK = "//a[contains(text(),'Support')]";
+
 	
 	
 	
@@ -89,6 +92,10 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	
 	@FindBy (xpath = PICSART_STORE_LINK)
 	public WebElement picsArtStoreLink;
+	
+	@FindBy (xpath = SUPPORT_LINK)
+	public WebElement supportLink;
+	
 	
 	
 	
@@ -169,4 +176,12 @@ public class PicsArtUserPage extends PicsArtBasePage{
 		picsArtStoreLink.click();
 		return new PicsArtUserPage(driver);
 	}
+	
+	public PicsArtSupportPage clickOnSupportLink() {
+		String supportPage = "https://support.picsart.com/hc/ru";
+		driver.get(supportPage);
+		supportLink.click();
+		return new PicsArtSupportPage(driver);
+	}
+	
 }

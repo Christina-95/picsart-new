@@ -12,6 +12,7 @@ import am.qa.picsart.pages.editingtools.PicsArtRemoveBackgroundEditingPage;
 import am.qa.picsart.pages.editingtools.PicsArtUploadSelectImagePage;
 import am.qa.picsart.pages.jobs.PicsArtJobsPage;
 import am.qa.picsart.pages.jobs.vacancies.PicsArtVacanciesPage;
+import am.qa.picsart.pages.support.PicsArtSupportPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 
@@ -30,9 +31,11 @@ public class PicsArtTest extends PicsArtBaseTest {
 		//1.1:Click on "Careers" link
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		userPage.clickOnCareersLink();
+		
 		//1.2:Click the "View Jobs" button
 		PicsArtJobsPage jobsPage = new PicsArtJobsPage(driver);
 		jobsPage.clickOnViewJobsButton();
+		
 		//Validate that the current vacancies are displayed
 		Thread.sleep(1000);
 		Assert.assertTrue(jobsPage.departmentsText.isDisplayed());
@@ -50,11 +53,14 @@ public class PicsArtTest extends PicsArtBaseTest {
 		//2.1:Click on "Careers" link
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		userPage.clickOnCareersLink();
+		
 		//2.2:Click the "View Jobs" button
 		PicsArtJobsPage jobsPage = new PicsArtJobsPage(driver);
 		jobsPage.clickOnViewJobsButton();
+		
 		//2.3:Click the "Continue on Jobs" button
 		jobsPage.clickOnContinueOnJobsBtn();
+		
 		//validate that the picsart.com/jobs/vacancies page is opened
 		PicsArtVacanciesPage vacanciesPage = new PicsArtVacanciesPage(driver);
 		vacanciesPage.waitForVacanciespageTitle();
@@ -73,12 +79,15 @@ public class PicsArtTest extends PicsArtBaseTest {
 		//3.1:Click on "Careers" link
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		userPage.clickOnCareersLink();
+		
 		//3.2:Click the "View Jobs" button
 		PicsArtJobsPage jobsPage = new PicsArtJobsPage(driver);
 		jobsPage.clickOnViewJobsButton();
+		
 		//3.3:Click the "Engineering" in the Departments section
 		jobsPage.clickOnEngineeringLink();
 		//validate that vacancies for "Engineering" are displayed
+		
 		//3.4:Click the Yerevan in the "Location" section
 		jobsPage.clickOnYerevanLink();
 		//validate that the vacancies in Yerevan are displayed
@@ -102,12 +111,14 @@ public class PicsArtTest extends PicsArtBaseTest {
 		
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		//5.1.Click the "Start Editing" button
+		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		userPage.clickOnStartEditingButton();
+		
 		//validate that the Editing Tools page is displayed
 		PicsArtEditingToolsPage toolsPage = new PicsArtEditingToolsPage(driver);
 		Assert.assertTrue(toolsPage.editingToolsPageTitle.isDisplayed());
+	
 	}
 	
 	@Test
@@ -119,24 +130,30 @@ public class PicsArtTest extends PicsArtBaseTest {
 
 
 		//Login with correct credentials -- Done in PicsArtBaseTest
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		//6.1.Click the "Start Editing" button
+		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		userPage.clickOnStartEditingButton();
+		
 		//6.2.Select the "Remove Background" filter
 		PicsArtEditingToolsPage toolsPage = new PicsArtEditingToolsPage(driver);
 		toolsPage.clickOnRemoveBackgroundFilter();
+		
 		//6.3.Select one of the suggested images
 		PicsArtUploadSelectImagePage uploadImage = new PicsArtUploadSelectImagePage(driver);
 		uploadImage.clickOnRandomImage();
+		
 		//6.4.Click the "Share" button
 		PicsArtRemoveBackgroundEditingPage removeBackgroundPage = new PicsArtRemoveBackgroundEditingPage(driver);
 		Thread.sleep(2000);
 		removeBackgroundPage.clickOnShareButton();
+		
 		//validate that the Pop-up is displayed
 		Assert.assertTrue(removeBackgroundPage.postButton.isDisplayed() && removeBackgroundPage.popUpTitle.isDisplayed());
+		
 		//6.5.Click the "Post" button
 		Thread.sleep(3000);
 		removeBackgroundPage.clickOnPostButton();
+		
 		//validate that the success message is diplayed 
 		//wait.waitForElementPresent(removeBackgrounPage.successfullypostedMessage);
 		Thread.sleep(30000);
@@ -153,28 +170,35 @@ public class PicsArtTest extends PicsArtBaseTest {
 
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		//7.1.Click the "Start Editing" button
+		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		userPage.clickOnStartEditingButton();
+		
 		//7.2.Select the "Remove Background" filter
 		PicsArtEditingToolsPage toolsPage = new PicsArtEditingToolsPage(driver);
 		toolsPage.clickOnRemoveBackgroundFilter();
+		
 		//7.3.Select one of the suggested images
 		PicsArtUploadSelectImagePage uploadImage = new PicsArtUploadSelectImagePage(driver);
 		uploadImage.clickOnRandomImage();
+		
 		//7.4.Click the "Share" button
 		PicsArtRemoveBackgroundEditingPage removeBackgroundPage = new PicsArtRemoveBackgroundEditingPage(driver);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.shareButton));
 		removeBackgroundPage.clickOnShareButton();
+		
 		//7.5.Click the "Post" button
 		wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.postButton));
 		removeBackgroundPage.clickOnPostButton();
+		
 		//validate that the success message is diplayed 
 		wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.successfullypostedMessage));
 		Assert.assertTrue(removeBackgroundPage.successfullypostedMessage.isDisplayed());
+		
 		//7.6.Click the "Go to Tools" button
 		removeBackgroundPage.clickOnGoToToolsBtn();
+		
 		//validate that the Editing Tools page is displayed
 		Assert.assertTrue(toolsPage.editingToolsPageTitle.isDisplayed());
 		
@@ -189,11 +213,13 @@ public class PicsArtTest extends PicsArtBaseTest {
 
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		//8.1.Click on the user avatar beside "Get the app" button
+		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		userPage.clickOnUserAvatar();
+		
 		//8.2.Click on the username link
 		userPage.clickOnUserNameLink();
+		
 		//validate that the "Posts" are displayed
 		Assert.assertTrue(userPage.postsLink.isDisplayed());
 	}
@@ -214,19 +240,25 @@ public class PicsArtTest extends PicsArtBaseTest {
 		//9.1.Click on the user avatar beside "Get the app" button
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		userPage.clickOnUserAvatar();
+		
 		//9.2.Click on the username link
 		userPage.clickOnUserNameLink();
+		
 		//9.3.Click on the last posted image
 		userPage.clickOnLastPostedImage();
+		
 		//9.4.Move to Drop-down
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(userPage.dropDown));
 		Actions actions= new Actions(driver);
 		actions.moveToElement(userPage.dropDown).build().perform();
+		
 		//validate that the "Edit" option is displayed
 		Assert.assertTrue(userPage.editOption.isDisplayed());
+		
 		//validate that the "Delete" option is displayed
 		Assert.assertTrue(userPage.deleteOption.isDisplayed());
+		
 		//validate that the "save to Collection" option is displayed
 		Assert.assertTrue(userPage.saveToCollectionOption.isDisplayed());
 	}
@@ -244,26 +276,33 @@ public class PicsArtTest extends PicsArtBaseTest {
 		//10.1.Click on the user avatar beside "Get the app" button
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		userPage.clickOnUserAvatar();
-		//Login with correct credentials -- Done in PicsArtBaseTest
+		
 		//10.2.Click on the username link
 		userPage.clickOnUserNameLink();
+		
 		//10.3.Click on the last posted image
 		userPage.clickOnLastPostedImage();
+		
 		//10.4.Move to Drop-down
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(userPage.dropDown));
 		Actions actions= new Actions(driver);
 		actions.moveToElement(userPage.dropDown).build().perform();
+		
 		//10.5.Click on the"Save to Collection" option
 		userPage.clickOnSaveToCollectionOption();
+		
 		//10.6.Select the "Create Collection" option
 		userPage.selectCreateCollectionOption();
+		
 		//10.7.Fill in the "Collection Name" field
 		wait.until(ExpectedConditions.visibilityOf(userPage.collectionNameField));
 		userPage.fillInTheCollectionNameField();
+		
 		//10.8.Click on the "Create" button
 		wait.until(ExpectedConditions.visibilityOf(userPage.createButton));
 		userPage.clickOnCreateButton();
+		
 		//go back to collections
 //		wait.until(ExpectedConditions.visibilityOf(userPage.xButton));
 //		userPage.clickTheXButton();
@@ -271,6 +310,7 @@ public class PicsArtTest extends PicsArtBaseTest {
 //		wait.until(ExpectedConditions.visibilityOf(userPage.collectionsLink));
 //		userPage.clickTheCollectionsLink();
 		driver.get("https://picsart.com/u/tinat6043/collections");
+		
 		//validate that the collection was saved
 		Assert.assertFalse(userPage.LAST_CREATED_COLLECTION.isEmpty());
 	
@@ -290,7 +330,38 @@ public class PicsArtTest extends PicsArtBaseTest {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(userPage.picsArtStoreLink));
 		userPage.clickOnPicsArtStoreLink();
+		
 		//validate that the zazzle.com/store/picsart page is displayed
 		Assert.assertTrue(!zazzlePage.isEmpty());
+	}
+	
+	@Test
+	public void testSupportPageLanguage() throws InterruptedException {
+		//Test Case ID:12
+		//Given that the user is authenticated
+		//when the user selects the "Support" and redirects to "PicsArt Support" page
+		//then the user can change the language of the page
+		
+		
+		//Login with correct credentials -- Done in PicsArtBaseTest
+		//12.1.Click on the "Support" link
+		PicsArtUserPage userPage = new PicsArtUserPage(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(userPage.supportLink));
+		userPage.clickOnSupportLink();
+		
+		//12.2.Click on "English" link
+		PicsArtSupportPage supportPage = new PicsArtSupportPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(supportPage.englishLink));
+		supportPage.clickOnEnglishLink();
+		
+		//12.3.Select other language
+		Thread.sleep(1000);
+		supportPage.clickOnRussianLink();
+
+		//validate that the page's language has changed
+		Thread.sleep(1000);
+		Assert.assertTrue(!supportPage.PAGE_TITLE_RUSSIAN.isEmpty());
+
 	}
 }

@@ -4,7 +4,7 @@
 		<classes>
 			<class name="am.qa.picsart.test.PicsArtTest">
 				<methods>
-				  	<include name="testCareersLink" />
+		  		  	<include name="testCareersLink" />
 					<include name="testVacanciesPage" /> 
 					<include name="testVacanciesByDepartmentsAndLocation" />
 					<include name="testEditingTools" />
@@ -13,8 +13,8 @@
 					<include name="testUserPosts" />
 					<include name="testPostedImageOptions" />         
 					<include name="testSaveToCollectionoption" />  
-					<include name="testPicsArtStoreLink" />
-					<include name="" />
+					<include name="testPicsArtStoreLink" />    
+					<include name="testSupportPageLanguage" />
 					<include name="" />
 					<include name="" />
 					<include name="" />
