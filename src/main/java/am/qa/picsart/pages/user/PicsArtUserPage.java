@@ -28,7 +28,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String START_EDITING_Button ="//span[contains(text(),'Start Editing')]";
 	protected final String USER_LINK = "//a[@data-js-ga-click='top-menu open profile']";
 	protected final String POSTS_LINK = "//a[@class='c-active active']";
-	protected final String LAST_POSTED_IMAGE = "//div[@class=\"img-wrapper pa-ratio-1-1\"]";
+	protected final String LAST_POSTED_IMAGE = "//div[@class='img-wrapper pa-ratio-1-1']";
 	protected final String EDIT_OPTION= "//li[@class='c-photo-description-edit'][contains(text(),'Edit')]";
 	protected final String DELETE_OPTION = "//li[@class='js-remove-image'][contains(text(),'Delete')]";
 	protected final String SAVE_TO_COLLECTION = "//li[contains(text(),'Save to Collection')]";
@@ -41,12 +41,16 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	public String LAST_CREATED_COLLECTION = "//a[@class=\"content clearfix\"]//*[text()='"+collectionName+"']";	
 	protected final String PICSART_STORE_LINK = "//a[contains(text(),'PicsArt Store')]";
 	protected final String SUPPORT_LINK = "//a[contains(text(),'Support')]";
+	protected final String PLUS_BUTTON = "//i[@class='svg-upload-photo-plus']";
+	protected final String SHARE_BUTTON = "//*[@class='icon-share-grid']";
+	protected final String LIKE_AND_COMMENT_BUTTON = "//div[@class='c-like-button notifier-hover-toggle like-button ']";
+	protected final String SAVE_TO_COLLECTION_BUTTON = "//div[contains(@data-js-ga-click,'photo add-to-collection')]";
 
 	
 	
 	
 	@FindBy (xpath = USER_AVATAR)
-	WebElement userAvatar;
+	public WebElement userAvatar;
 	
 	@FindBy (xpath = CAREERS_LINK)
 	WebElement careersLink;
@@ -55,7 +59,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	WebElement startEditingButton;
 	
 	@FindBy (xpath = USER_LINK)
-	WebElement userLink;
+	public WebElement userLink;
 	
 	@FindBy (xpath = POSTS_LINK)
 	public WebElement postsLink;
@@ -95,6 +99,18 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	
 	@FindBy (xpath = SUPPORT_LINK)
 	public WebElement supportLink;
+	
+	@FindBy (xpath = PLUS_BUTTON)
+	public WebElement plusButton;
+	
+	@FindBy (xpath = SHARE_BUTTON)
+	public WebElement share;
+	
+	@FindBy (xpath = LIKE_AND_COMMENT_BUTTON)
+	public WebElement likeAndComment;
+	
+	@FindBy (xpath = SAVE_TO_COLLECTION_BUTTON)
+	public WebElement saveToCollection;
 	
 	
 	
@@ -182,6 +198,11 @@ public class PicsArtUserPage extends PicsArtBasePage{
 		driver.get(supportPage);
 		supportLink.click();
 		return new PicsArtSupportPage(driver);
+	}
+	
+	public PicsArtUserPage clickOnOlusButton() {
+		plusButton.click();
+		return new PicsArtUserPage(driver);
 	}
 	
 }
