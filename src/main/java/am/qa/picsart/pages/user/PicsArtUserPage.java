@@ -45,6 +45,11 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String SHARE_BUTTON = "//*[@class='icon-share-grid']";
 	protected final String LIKE_AND_COMMENT_BUTTON = "//div[@class='c-like-button notifier-hover-toggle like-button ']";
 	protected final String SAVE_TO_COLLECTION_BUTTON = "//div[contains(@data-js-ga-click,'photo add-to-collection')]";
+	protected final String EXPLORE_LINK = "//a[@data-js-ga-click='top-menu open explore']";
+	protected final String PICKS_LINK = "//span[contains(text(),'PICKS')]";
+	protected final String PICKS_IMAGE = "//img[@src='https://cdn131.picsart.com/322412926352201.jpg?type=webp&to=crop&r=256']";
+	protected final String REPORT_ABUSE_OPTION = "//li[contains(text(),'Report Abuse')]";		
+	protected final String REPOST_OPTION = "//li[contains(text(),'Repost')]";
 
 	
 	
@@ -111,6 +116,21 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	
 	@FindBy (xpath = SAVE_TO_COLLECTION_BUTTON)
 	public WebElement saveToCollection;
+	
+	@FindBy (xpath = EXPLORE_LINK)
+	public WebElement exploreLink;
+	
+	@FindBy (xpath = PICKS_LINK)
+	public WebElement picksLink;
+	
+	@FindBy (xpath = PICKS_IMAGE)
+	public WebElement picksImage;
+	
+	@FindBy (xpath = REPORT_ABUSE_OPTION)
+	public WebElement reportAbuseOption;
+	
+	@FindBy (xpath = REPOST_OPTION)
+	public WebElement repostOption;
 	
 	
 	
