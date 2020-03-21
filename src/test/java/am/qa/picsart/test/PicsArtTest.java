@@ -462,7 +462,7 @@ public class PicsArtTest extends PicsArtBaseTest {
 		userPage.clickOnUserAvatar();
 		
 		//14.2.Click on the username link
-		wait.until(ExpectedConditions.elementToBeClickable(userPage.userLink));
+		wait.until(ExpectedConditions.elementToBeClickable(userPage.userNameLink));
 		userPage.clickOnUserNameLink();
 		
 		//14.3.Move the mouse to one of the posted images
@@ -517,8 +517,34 @@ public class PicsArtTest extends PicsArtBaseTest {
 		wait.until(ExpectedConditions.elementToBeClickable(userPage.repostOption));
 		Assert.assertTrue(userPage.repostOption.isDisplayed());
 		wait.until(ExpectedConditions.elementToBeClickable(userPage.saveToCollectionOption));
-		//Assert.assertTrue(userPage.saveToCollectionOption.isDisplayed());
+		Assert.assertTrue(userPage.saveToCollectionOption.isDisplayed());
 
+	}
+	
+	@Test
+	public void testUserOptions() {
+		//Test Case ID:16
+		//Given that the user is authenticated
+		//when the user clicks on the user's avatar
+		//then the username, "Find Friends", "Settings" and "Log Out" links are displayed
+		
+		//Login with correct credentials -- Done in PicsArtBaseTest
+		//14.1.Click on the user avatar
+		PicsArtUserPage userPage = new PicsArtUserPage(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(userPage.userAvatar));
+		userPage.clickOnUserAvatar();
+		
+		//validate that the username link, "Find Friends", "Settings" and "Log Out" links are displayed
+		wait.until(ExpectedConditions.elementToBeClickable(userPage.userNameLink));
+		Assert.assertTrue(userPage.userNameLink.isDisplayed());
+		wait.until(ExpectedConditions.elementToBeClickable(userPage.findFriendsLink));
+		Assert.assertTrue(userPage.findFriendsLink.isDisplayed());
+		wait.until(ExpectedConditions.elementToBeClickable(userPage.settingsLink));
+		Assert.assertTrue(userPage.settingsLink.isDisplayed());
+		wait.until(ExpectedConditions.elementToBeClickable(userPage.logOutLink));
+		Assert.assertTrue(userPage.logOutLink.isDisplayed());
+		
 	}
 	
 }

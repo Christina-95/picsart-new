@@ -45,8 +45,19 @@ public class PicsArtBaseTest {
 		}
 		
 		
+//		@AfterTest
+//		public void quit() {
+//			PicsArtUserPage userPage = new PicsArtUserPage(driver);
+//			WebDriverWait wait = new WebDriverWait(driver, 30);
+//			wait.until(ExpectedConditions.visibilityOf(userPage.userAvatar));
+//			userPage.userAvatar.click();
+//			wait.until(ExpectedConditions.visibilityOf(userPage.logOutLink));
+//			userPage.logOutLink.click();
+//			driver.quit();
+//		}
+		
 		@AfterTest
-		public void quit() {
+		public void quitChrome() {
 			driver.quit();
 		}
 		

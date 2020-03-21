@@ -4,10 +4,7 @@
 		<classes>
 			<class name="am.qa.picsart.test.PicsArtTest">
 				<methods>
-		      	  	<include name="testCareersLink" />
-					<include name="testVacanciesPage" /> 
-					<include name="testVacanciesByDepartmentsAndLocation" />
-					<include name="testEditingTools" />
+			  		<include name="testEditingTools" />
 					<include name="testRemoveBackground" />
 					<include name="testGoToToolsBtn" />
 					<include name="testUserPosts" />
@@ -17,8 +14,8 @@
 					<include name="testSupportPageLanguage" />    
 					<include name="testGetTheAppButton" />    
 					<include name="testImageOptions" /> 
-					<include name="testPicksImagesOptions" />
-					<include name="" />
+					<include name="testPicksImagesOptions" />   
+					<include name="testUserOptions" /> 
 					<include name="" />
 					<include name="" />
 					<include name="" />

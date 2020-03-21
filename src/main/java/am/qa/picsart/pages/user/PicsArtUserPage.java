@@ -26,7 +26,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String USER_AVATAR = "//img[@class='c-image-check js-user-avatar']";
 	protected final String CAREERS_LINK = "//a[contains(text(),'Careers')]";
 	protected final String START_EDITING_Button ="//span[contains(text(),'Start Editing')]";
-	protected final String USER_LINK = "//a[@data-js-ga-click='top-menu open profile']";
+	protected final String USERNAME_LINK = "//a[@data-js-ga-click='top-menu open profile']";
 	protected final String POSTS_LINK = "//a[@class='c-active active']";
 	protected final String LAST_POSTED_IMAGE = "//div[@class='img-wrapper pa-ratio-1-1']";
 	protected final String EDIT_OPTION= "//li[@class='c-photo-description-edit'][contains(text(),'Edit')]";
@@ -59,6 +59,8 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String LOG_OUT_LINK = "//a[contains(text(),'Log Out')]";
 	protected final String GET_THE_APP_BUTTON = "//div[@data-js-ga-click='get-app get-app top-nav']";
 	protected final String GET_THE_APP_POP_UP_TITLE = "//span[@class='welcome-on-board'][contains(text(),'Get the App for free')]";
+	protected final String FIND_FRIENDS_LINK = "//a[contains(text(),'Find Friends')]";
+	
 	
 	
 	@FindBy (xpath = USER_AVATAR)
@@ -70,8 +72,8 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	@FindBy (xpath = START_EDITING_Button)
 	WebElement startEditingButton;
 	
-	@FindBy (xpath = USER_LINK)
-	public WebElement userLink;
+	@FindBy (xpath = USERNAME_LINK)
+	public WebElement userNameLink;
 	
 	@FindBy (xpath = POSTS_LINK)
 	public WebElement postsLink;
@@ -169,6 +171,8 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	public WebElement getTheAppPopUpTitle;
 	
 	
+	@FindBy (xpath = FIND_FRIENDS_LINK)
+	public WebElement findFriendsLink;
 	
 	
 	public boolean validateLoggedInUser() {
@@ -195,8 +199,8 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	}
 	
 	public PicsArtUserPage clickOnUserNameLink() {
-		wait.waitForElementToBeClickable(userLink);
-		userLink.click();
+		wait.waitForElementToBeClickable(userNameLink);
+		userNameLink.click();
 		return new PicsArtUserPage(driver);
 	}
 	
