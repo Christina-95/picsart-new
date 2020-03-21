@@ -60,6 +60,10 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String GET_THE_APP_BUTTON = "//div[@data-js-ga-click='get-app get-app top-nav']";
 	protected final String GET_THE_APP_POP_UP_TITLE = "//span[@class='welcome-on-board'][contains(text(),'Get the App for free')]";
 	protected final String FIND_FRIENDS_LINK = "//a[contains(text(),'Find Friends')]";
+	protected final String ABOUT_LINK = "//label[contains(text(),'About')]";
+	protected final String APPS_LINK = "//a[contains(text(),'Apps')]";
+	
+	
 	
 	
 	
@@ -173,6 +177,18 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	
 	@FindBy (xpath = FIND_FRIENDS_LINK)
 	public WebElement findFriendsLink;
+	
+	
+	@FindBy (xpath = ABOUT_LINK)
+	public WebElement aboutLink;
+	
+	@FindBy (xpath = APPS_LINK)
+	public WebElement appsLink;
+	
+	
+	
+	
+	
 	
 	
 	public boolean validateLoggedInUser() {
