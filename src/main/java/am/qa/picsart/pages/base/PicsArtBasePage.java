@@ -16,7 +16,7 @@ public class PicsArtBasePage {
 	protected final String LOGIN_BUTTON_XPATH = "//a[@data-js-ga-click='sign-in']";
 	
 	@FindBy (xpath = LOGIN_BUTTON_XPATH)
-	WebElement loginButton;
+	public WebElement loginButton;
 	
 	@FindBy (xpath = CLOSE_POP_UP)
 	WebElement closePopUp;
@@ -50,9 +50,7 @@ public class PicsArtBasePage {
 	}
 	
 	
-	public PicsArtLoginPage clickOnLoginButton() throws InterruptedException {
-		waitForElementPresent(loginButton);
-		Thread.sleep(3000);
+	public PicsArtLoginPage clickOnLoginButton() {
 		loginButton.click();
 		return new PicsArtLoginPage(driver);
 	}

@@ -7,11 +7,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import am.qa.picsart.pages.base.PicsArtBasePage;
 import am.qa.picsart.pages.editingtools.PicsArtEditingToolsPage;
 import am.qa.picsart.pages.editingtools.PicsArtRemoveBackgroundEditingPage;
 import am.qa.picsart.pages.editingtools.PicsArtUploadSelectImagePage;
 import am.qa.picsart.pages.jobs.PicsArtJobsPage;
 import am.qa.picsart.pages.jobs.vacancies.PicsArtVacanciesPage;
+import am.qa.picsart.pages.login.PicsArtLoginPage;
 import am.qa.picsart.pages.support.PicsArtSupportPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
@@ -68,7 +70,7 @@ public class PicsArtTest extends PicsArtBaseTest {
 	}
 	
 	@Test 
-	public void testVacanciesByDepartmentsAndLocation() throws InterruptedException {
+	public void testVacanciesByDepartmentsAndLocation() { 
 		//Test Case ID:3
 		//Given that the user is authenticated
 		//when the user is on the "PicsArt Careers" page
@@ -78,29 +80,91 @@ public class PicsArtTest extends PicsArtBaseTest {
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//3.1:Click on "Careers" link
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(userPage.careersLink));
 		userPage.clickOnCareersLink();
 		
 		//3.2:Click the "View Jobs" button
 		PicsArtJobsPage jobsPage = new PicsArtJobsPage(driver);
+		wait.until(ExpectedConditions.visibilityOf(jobsPage.viewJobsButton));
 		jobsPage.clickOnViewJobsButton();
 		
-		//3.3:Click the "Engineering" in the Departments section
-		jobsPage.clickOnEngineeringLink();
-		//validate that vacancies for "Engineering" are displayed
-		
-		//3.4:Click the Yerevan in the "Location" section
-		jobsPage.clickOnYerevanLink();
-		//validate that the vacancies in Yerevan are displayed
+		//validate that current required vacancies are displayed with the possibility to search by "Departments" and "Location"
+		wait.until(ExpectedConditions.visibilityOf(jobsPage.departmentsText));
+		Assert.assertTrue(jobsPage.departmentsText.isDisplayed());
+		wait.until(ExpectedConditions.visibilityOf(jobsPage.locationText));
+		Assert.assertTrue(jobsPage.locationText.isDisplayed());
+		wait.until(ExpectedConditions.visibilityOf(jobsPage.engineeringLink));
+		Assert.assertTrue(jobsPage.engineeringLink.isDisplayed());
+		wait.until(ExpectedConditions.visibilityOf(jobsPage.yerevanLink));
+		Assert.assertTrue(jobsPage.yerevanLink.isDisplayed());
 	}
 
 	
 	@Test 
-	public void testApplyForVacancy() {
+	public void testChangePassword () {
 		//Test Case ID:4
-		//Given that the user is authenticated and is on the "PicsArt Careers" page 
-		//when the user selects the specific required vacancy
-		//then the user can apply for it by filling out the required fields in the "Application" section
-
+		//Given that the user is authenticated
+		//when the user changes her/his profile password
+		//then the user cannot log in with the old password
+		
+		
+		//Login with correct credentials -- Done in PicsArtBaseTest
+		//4.1.Click on the user avatar beside "Get the app" button
+		PicsArtUserPage userPage = new PicsArtUserPage(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(userPage.userAvatar));
+		userPage.clickOnUserAvatar();
+		
+		//4.2.Click on the "Settings" link
+		wait.until(ExpectedConditions.visibilityOf(userPage.settingsLink));
+		userPage.settingsLink.click();
+		
+		//4.3.Click on the "Change" button beside Password field
+		wait.until(ExpectedConditions.visibilityOf(userPage.changePasswordButton));
+		userPage.changePasswordButton.click();
+		
+		//4.4.Fill in the "Current Password", "New Password" and "Retype new password" fields
+		wait.until(ExpectedConditions.visibilityOf(userPage.currentPasswordField));
+		userPage.fillInTheCurrentPasswordField();
+		wait.until(ExpectedConditions.visibilityOf(userPage.newPasswordField));
+		userPage.fillInTheNewPasswordField();
+		wait.until(ExpectedConditions.visibilityOf(userPage.retypeNewPassword));
+		userPage.fillInTheRetypePasswordField();
+		
+		//4.5.Click on the "Save Changes" button
+		wait.until(ExpectedConditions.visibilityOf(userPage.saveChangesButton));
+		userPage.saveChangesButton.click();
+		
+		//4.6.Click on the user avatar and on the "Log Out" link
+		wait.until(ExpectedConditions.visibilityOf(userPage.userAvatar));
+		userPage.clickOnUserAvatar();
+		wait.until(ExpectedConditions.visibilityOf(userPage.logOutLink));
+		userPage.logOutLink.click();
+		
+		//validate that the user is logged out of the system 
+		Assert.assertFalse(userPage.userAvatar.isDisplayed());
+		
+		//4.7.Click on the "Log In" button
+		PicsArtBasePage page = new PicsArtBasePage(driver);
+		wait.until(ExpectedConditions.visibilityOf(page.loginButton));
+        page.clickOnLoginButton();
+        
+        //4.8.Fill in the "Username" field with correct username 
+        PicsArtLoginPage loginPage = new PicsArtLoginPage(driver);
+        loginPage.usernameOrEmailField.click();
+        loginPage.usernameOrEmailField.sendKeys("tinat6043@gmail.com");
+       
+        //4.9.Fill in the "Password" field with the old password and click on the "Sign in" button
+        loginPage.passwordField.click();
+        loginPage.passwordField.sendKeys("123456789");
+        wait.until(ExpectedConditions.visibilityOf(loginPage.signInButton));
+        loginPage.signInButton.click();
+        
+        //validate that the error message is displayed
+        wait.until(ExpectedConditions.visibilityOf(loginPage.errorMessage));
+        Assert.assertTrue(loginPage.errorMessage.isDisplayed());
+        
 	}
 	
 	public void testEditingTools() throws InterruptedException {
@@ -265,11 +329,11 @@ public class PicsArtTest extends PicsArtBaseTest {
 	
 	
 	@Test
-	public void testSaveToCollectionoption() {
+	public void testSaveToCollectionOption() {
 		//Test Case ID:10
 		//Given that the user is on her/his profile page 
 		//when the user selects any of her/his posted images and Click on the"Save to Collection"
-		//then the user can save the image/sticker in the existing or in the newly created collection
+		//then the user can save the image in the newly created collection
 		
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
@@ -290,9 +354,11 @@ public class PicsArtTest extends PicsArtBaseTest {
 		actions.moveToElement(userPage.dropDown).build().perform();
 		
 		//10.5.Click on the"Save to Collection" option
+		wait.until(ExpectedConditions.visibilityOf(userPage.saveToCollectionOption));
 		userPage.clickOnSaveToCollectionOption();
 		
 		//10.6.Select the "Create Collection" option
+		wait.until(ExpectedConditions.visibilityOf(userPage.createCollectionOption));
 		userPage.selectCreateCollectionOption();
 		
 		//10.7.Fill in the "Collection Name" field
@@ -303,15 +369,8 @@ public class PicsArtTest extends PicsArtBaseTest {
 		wait.until(ExpectedConditions.visibilityOf(userPage.createButton));
 		userPage.clickOnCreateButton();
 		
-		//go back to collections
-//		wait.until(ExpectedConditions.visibilityOf(userPage.xButton));
-//		userPage.clickTheXButton();
-//		//click on the "Collections" link
-//		wait.until(ExpectedConditions.visibilityOf(userPage.collectionsLink));
-//		userPage.clickTheCollectionsLink();
-		driver.get("https://picsart.com/u/tinat6043/collections");
-		
 		//validate that the collection was saved
+		driver.get("https://picsart.com/u/tinat6043/collections");
 		Assert.assertFalse(userPage.LAST_CREATED_COLLECTION.isEmpty());
 	
 	}
@@ -363,6 +422,25 @@ public class PicsArtTest extends PicsArtBaseTest {
 		Thread.sleep(1000);
 		Assert.assertTrue(!supportPage.PAGE_TITLE_RUSSIAN.isEmpty());
 
+	}
+	
+	@Test 
+	public void testGetTheAppButton() {
+		//Test Case ID:13
+		//Given that the user is authenticated
+		//when the user selects the "Get the app" button
+		//then the "Get the App for free" pop-up is displayed 
+		
+		//Login with correct credentials -- Done in PicsArtBaseTest
+		//13.1.Click on the "Get the app" button
+		PicsArtUserPage userPage = new PicsArtUserPage(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(userPage.getTheAppButton));
+		userPage.getTheAppButton.click();
+		
+		//validate that the "Get the App for free" pop-up is displayed
+		wait.until(ExpectedConditions.elementToBeClickable(userPage.getTheAppPopUpTitle));
+		Assert.assertTrue(userPage.getTheAppPopUpTitle.isDisplayed());
 	}
 	
 	@Test 
@@ -439,7 +517,8 @@ public class PicsArtTest extends PicsArtBaseTest {
 		wait.until(ExpectedConditions.elementToBeClickable(userPage.repostOption));
 		Assert.assertTrue(userPage.repostOption.isDisplayed());
 		wait.until(ExpectedConditions.elementToBeClickable(userPage.saveToCollectionOption));
-		Assert.assertTrue(userPage.saveToCollectionOption.isDisplayed());
+		//Assert.assertTrue(userPage.saveToCollectionOption.isDisplayed());
 
 	}
+	
 }

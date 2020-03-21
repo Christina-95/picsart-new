@@ -50,15 +50,22 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String PICKS_IMAGE = "//img[@src='https://cdn131.picsart.com/322412926352201.jpg?type=webp&to=crop&r=256']";
 	protected final String REPORT_ABUSE_OPTION = "//li[contains(text(),'Report Abuse')]";		
 	protected final String REPOST_OPTION = "//li[contains(text(),'Repost')]";
-
-	
+	protected final String SETTINGS_LINK = "//a[contains(text(),'Settings')]";
+	protected final String CHANGE_PASSWORD_BUTTON = "//button[@class='border-btn js-the-accordion-toggle accordion-toggle grid-col m7'][contains(text(),'Change')]";
+	protected final String CURRENT_PASSWORD_FIELD = "//input[@name='password_confirm']";
+	protected final String NEW_PASSWORD_FIELD = "//input[@name='password']";
+	protected final String RETYPE_NEW_PASSWORD = "//input[@name='password_retype']";
+	protected final String SAVE_CHANGES_BUTTON = "//button[@type='submit']";
+	protected final String LOG_OUT_LINK = "//a[contains(text(),'Log Out')]";
+	protected final String GET_THE_APP_BUTTON = "//div[@data-js-ga-click='get-app get-app top-nav']";
+	protected final String GET_THE_APP_POP_UP_TITLE = "//span[@class='welcome-on-board'][contains(text(),'Get the App for free')]";
 	
 	
 	@FindBy (xpath = USER_AVATAR)
 	public WebElement userAvatar;
 	
 	@FindBy (xpath = CAREERS_LINK)
-	WebElement careersLink;
+	public WebElement careersLink;
 	
 	@FindBy (xpath = START_EDITING_Button)
 	WebElement startEditingButton;
@@ -132,6 +139,35 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	@FindBy (xpath = REPOST_OPTION)
 	public WebElement repostOption;
 	
+	@FindBy (xpath = SETTINGS_LINK)
+	public WebElement settingsLink;
+	
+	@FindBy (xpath = CHANGE_PASSWORD_BUTTON)
+	public WebElement changePasswordButton;
+	
+	@FindBy (xpath = CURRENT_PASSWORD_FIELD)
+	public WebElement currentPasswordField;
+	
+	@FindBy (xpath = NEW_PASSWORD_FIELD)
+	public WebElement newPasswordField;
+	
+	@FindBy (xpath = RETYPE_NEW_PASSWORD)
+	public WebElement retypeNewPassword;
+	
+	@FindBy (xpath = SAVE_CHANGES_BUTTON)
+	public WebElement saveChangesButton;
+	
+	@FindBy (xpath = LOG_OUT_LINK)
+	public WebElement logOutLink;
+	
+
+	@FindBy (xpath = GET_THE_APP_BUTTON)
+	public WebElement getTheAppButton;
+	
+	
+	@FindBy (xpath = GET_THE_APP_POP_UP_TITLE)
+	public WebElement getTheAppPopUpTitle;
+	
 	
 	
 	
@@ -143,7 +179,6 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	}
 	
 	public PicsArtJobsPage clickOnCareersLink() {
-		wait.waitForElementToBeClickable(careersLink);
 		careersLink.click();
 		return new PicsArtJobsPage(driver);
 	}
@@ -155,7 +190,6 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	}
 
 	public PicsArtUserPage clickOnUserAvatar() {
-		wait.waitForElementToBeClickable(userAvatar);
 		userAvatar.click();
 		return new PicsArtUserPage(driver);
 	}
@@ -222,6 +256,24 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	
 	public PicsArtUserPage clickOnOlusButton() {
 		plusButton.click();
+		return new PicsArtUserPage(driver);
+	}
+	
+	public PicsArtUserPage fillInTheCurrentPasswordField() {
+		currentPasswordField.click();
+		currentPasswordField.sendKeys("123456789");
+		return new PicsArtUserPage(driver);
+	}
+	
+	public PicsArtUserPage fillInTheNewPasswordField() {
+		newPasswordField.click();
+		newPasswordField.sendKeys("12345678");
+		return new PicsArtUserPage(driver);
+	}
+	
+	public PicsArtUserPage fillInTheRetypePasswordField() {
+		retypeNewPassword.click();
+		retypeNewPassword.sendKeys("12345678");
 		return new PicsArtUserPage(driver);
 	}
 	

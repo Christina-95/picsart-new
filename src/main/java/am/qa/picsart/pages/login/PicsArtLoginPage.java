@@ -15,15 +15,20 @@ public class PicsArtLoginPage extends PicsArtBasePage {
 	protected final String USERNAME_OR_EMAIL_FIELD = "//input[@id='username']";
 	protected final String PASSWORD_FIELD = "//input[@id='password']";
 	protected final String SIGN_IN_BUTTON = "//div[@type='submit']";
+	protected final String ERROR_MESSAGE = "//span[contains(text(),'Connection error')]";
+	
 	
 	@FindBy (xpath = USERNAME_OR_EMAIL_FIELD)
-	WebElement usernameOrEmailField;
+	public WebElement usernameOrEmailField;
 	
 	@FindBy (xpath = PASSWORD_FIELD)
-	WebElement passwordField;
+	public WebElement passwordField;
 	
 	@FindBy (xpath = SIGN_IN_BUTTON)
-	WebElement signInButton;
+	public WebElement signInButton;
+	
+	@FindBy (xpath = ERROR_MESSAGE)
+	public WebElement errorMessage;
 	
 	
 	public void signIn() throws InterruptedException{

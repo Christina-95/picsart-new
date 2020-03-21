@@ -12,12 +12,12 @@
 					<include name="testGoToToolsBtn" />
 					<include name="testUserPosts" />
 					<include name="testPostedImageOptions" />         
-					<include name="testSaveToCollectionoption" />  
+					<include name="testSaveToCollectionOption" />  
 					<include name="testPicsArtStoreLink" />    
 					<include name="testSupportPageLanguage" />    
-					<include name="testImageOptions" />    
+					<include name="testGetTheAppButton" />    
+					<include name="testImageOptions" /> 
 					<include name="testPicksImagesOptions" />
-					<include name="" />
 					<include name="" />
 					<include name="" />
 					<include name="" />

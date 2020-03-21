@@ -7,6 +7,8 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -32,9 +34,9 @@ public class PicsArtBaseTest {
 			//driver.manage().window().maximize();
 			PicsArtBasePage page = new PicsArtBasePage(driver);
 			page.clicOnPopUp();
-			Thread.sleep(1000);
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.visibilityOf(page.loginButton));
 	        page.clickOnLoginButton();
-	        //driver.get("https://picsart.com/#");
 	        PicsArtLoginPage loginPage = new PicsArtLoginPage(driver);
 	        loginPage.signIn();
 	        PicsArtUserPage userPage = new PicsArtUserPage(driver);
