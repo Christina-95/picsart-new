@@ -13,6 +13,7 @@ import am.qa.picsart.pages.editingtools.PicsArtEditingToolsPage;
 import am.qa.picsart.pages.editingtools.PicsArtRemoveBackgroundEditingPage;
 import am.qa.picsart.pages.editingtools.PicsArtUploadSelectImagePage;
 import am.qa.picsart.pages.gettheapp.PicsArtGetTheAppPage;
+import am.qa.picsart.pages.gold.PicsArtGoldPage;
 import am.qa.picsart.pages.jobs.PicsArtJobsPage;
 import am.qa.picsart.pages.jobs.vacancies.PicsArtVacanciesPage;
 import am.qa.picsart.pages.login.PicsArtLoginPage;
@@ -579,6 +580,34 @@ public class PicsArtTest extends PicsArtBaseTest {
 		
 		//additional step
 		driver.get(HOME_PAGE_URL);
+		
+	}
+	
+	@Test
+	public void testPicsArtGold() {
+		//Test Case ID:18
+		//Given that the user is authenticated
+		//when the user selects the "PicsArt Gold", clicks the "Start Free Trial" button, selects the "Android" option, selects the "PayPal" option
+		//then the "Pay with the PayPal" page is displayed
+		
+		
+		//Login with correct credentials -- Done in PicsArtBaseTest
+		//18.1.Click on the "Picsart Gold" link on the sidebar
+		PicsArtUserPage userPage = new PicsArtUserPage(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(userPage.picsartGoldLink));
+		userPage.picsartGoldLink.click();
+		
+		//18.2.Click on the "Start Free Trial" button
+		PicsArtGoldPage goldPage = new PicsArtGoldPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(goldPage.startFreeTrialButton));
+		goldPage.startFreeTrialButton.click();
+		
+		//validate that the "Your card won't be charged during trial period" message is displayed in the "Claim 14-Day Free Trial" page
+		wait.until(ExpectedConditions.elementToBeClickable(goldPage.picsartGoldTitle));
+		Assert.assertTrue(goldPage.picsartGoldTitle.isDisplayed());
+		wait.until(ExpectedConditions.elementToBeClickable(goldPage.cardInfoMessage));
+		Assert.assertTrue(goldPage.cardInfoMessage.isDisplayed());
 		
 	}
 	

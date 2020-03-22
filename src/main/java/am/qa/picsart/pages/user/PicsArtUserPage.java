@@ -66,7 +66,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String NAME_FIELD = "//input[@placeholder='Name']";
 	protected final String SAVE_BUTTON = "//button[@class='primary-btn js-save'][contains(text(),'Save')]";
 	public String  USER_NAME = "//span[@class='text-ellipsis'][contains(text(),'"+changeUserName+"')]";
-	
+	protected final String PICSART_GOLD_LINK = "//a[@data-js-active='gold']";
 	
 	
 	
@@ -193,6 +193,9 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	
 	@FindBy (xpath = SAVE_BUTTON)
 	public WebElement saveButton;
+	
+	@FindBy (xpath = PICSART_GOLD_LINK)
+	public WebElement picsartGoldLink;
 	
 	
 	
