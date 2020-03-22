@@ -1,5 +1,6 @@
 package am.qa.picsart.pages.base;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -36,6 +37,11 @@ public class PicsArtBasePage {
 	public void waitForElementToBeClickable(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
+	public void waitForElementPresent(String xPath) {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(xPath)));
 	}
 	
 	public void moveToElement(WebElement element) {

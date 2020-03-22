@@ -21,6 +21,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	Random random = new Random();
 	int a = random.nextInt(99) + 10;
 	public String collectionName = "Collection" + a;
+	public String changeUserName = "tina" + a;
 	
 	
 	protected final String USER_AVATAR = "//img[@class='c-image-check js-user-avatar']";
@@ -38,7 +39,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String COLLECTION_NAME_FIELD = "//input[@type='text']";
 	protected final String X_BUTTON = "//span[@class='c-close-trigger js-close-preview svg-close close-modal']";
 	protected final String COLLECTIONS_LINK = "//a[contains(.,'0Collections')]";
-	public String LAST_CREATED_COLLECTION = "//a[@class=\"content clearfix\"]//*[text()='"+collectionName+"']";	
+	public String LAST_CREATED_COLLECTION = "//a[@class='content clearfix']//*[text()='"+collectionName+"']";	
 	protected final String PICSART_STORE_LINK = "//a[contains(text(),'PicsArt Store')]";
 	protected final String SUPPORT_LINK = "//a[contains(text(),'Support')]";
 	protected final String PLUS_BUTTON = "//i[@class='svg-upload-photo-plus']";
@@ -62,7 +63,9 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String FIND_FRIENDS_LINK = "//a[contains(text(),'Find Friends')]";
 	protected final String ABOUT_LINK = "//label[contains(text(),'About')]";
 	protected final String APPS_LINK = "//a[contains(text(),'Apps')]";
-	
+	protected final String NAME_FIELD = "//input[@placeholder='Name']";
+	protected final String SAVE_BUTTON = "//button[@class='primary-btn js-save'][contains(text(),'Save')]";
+	public String  USER_NAME = "//span[@class='text-ellipsis'][contains(text(),'"+changeUserName+"')]";
 	
 	
 	
@@ -185,6 +188,11 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	@FindBy (xpath = APPS_LINK)
 	public WebElement appsLink;
 	
+	@FindBy (xpath = NAME_FIELD)
+	public WebElement nameField;
+	
+	@FindBy (xpath = SAVE_BUTTON)
+	public WebElement saveButton;
 	
 	
 	
@@ -294,6 +302,13 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	public PicsArtUserPage fillInTheRetypePasswordField() {
 		retypeNewPassword.click();
 		retypeNewPassword.sendKeys("12345678");
+		return new PicsArtUserPage(driver);
+	}
+	
+	public PicsArtUserPage fillInTheNameField() {
+		nameField.click();
+		nameField.clear();
+		nameField.sendKeys(changeUserName);
 		return new PicsArtUserPage(driver);
 	}
 	

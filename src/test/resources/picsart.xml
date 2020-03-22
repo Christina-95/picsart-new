@@ -16,8 +16,8 @@
 					<include name="testImageOptions" /> 
 					<include name="testPicksImagesOptions" />   
 					<include name="testUserOptions" /> 
-					<include name="testAppsLink" />
-					<include name="" />
+					<include name="testAppsLink" /> 
+					<include name="testChangeNameOption" />
 					<include name="" />
 					<include name="" />
 					<include name="" />
