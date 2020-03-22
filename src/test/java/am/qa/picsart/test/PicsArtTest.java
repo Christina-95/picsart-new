@@ -587,8 +587,8 @@ public class PicsArtTest extends PicsArtBaseTest {
 	public void testPicsArtGold() {
 		//Test Case ID:18
 		//Given that the user is authenticated
-		//when the user selects the "PicsArt Gold", clicks the "Start Free Trial" button, selects the "Android" option, selects the "PayPal" option
-		//then the "Pay with the PayPal" page is displayed
+		//when the user selects the "PicsArt Gold", clicks the "Start Free Trial" button
+		//then the "Your card won't be charged during trial period" message is displayed in the "Claim 14-Day Free Trial" page
 		
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
