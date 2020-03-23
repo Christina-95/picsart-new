@@ -67,8 +67,14 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String SAVE_BUTTON = "//button[@class='primary-btn js-save'][contains(text(),'Save')]";
 	public String  USER_NAME = "//span[@class='text-ellipsis'][contains(text(),'"+changeUserName+"')]";
 	protected final String PICSART_GOLD_LINK = "//a[@data-js-active='gold']";
+	protected final String SEARCH_FIELD = "//input[@type='search']";
+	protected final String ARTISTS_LINK = "//a[@data-js-ga-click='search select-category artists']";
+	protected final String FOLLOWING_LINK = "//a[@href='/u/tinat6043/following']";
 	
 	
+	
+	@FindBy (xpath = ARTISTS_LINK)
+	public WebElement artistsLink;
 	
 	@FindBy (xpath = USER_AVATAR)
 	public WebElement userAvatar;
@@ -168,19 +174,15 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	
 	@FindBy (xpath = LOG_OUT_LINK)
 	public WebElement logOutLink;
-	
 
 	@FindBy (xpath = GET_THE_APP_BUTTON)
 	public WebElement getTheAppButton;
 	
-	
 	@FindBy (xpath = GET_THE_APP_POP_UP_TITLE)
 	public WebElement getTheAppPopUpTitle;
 	
-	
 	@FindBy (xpath = FIND_FRIENDS_LINK)
 	public WebElement findFriendsLink;
-	
 	
 	@FindBy (xpath = ABOUT_LINK)
 	public WebElement aboutLink;
@@ -197,7 +199,11 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	@FindBy (xpath = PICSART_GOLD_LINK)
 	public WebElement picsartGoldLink;
 	
+	@FindBy (xpath = SEARCH_FIELD)
+	public WebElement searchField;
 	
+	@FindBy (xpath = FOLLOWING_LINK)
+	public WebElement followingLink;
 	
 	
 	
@@ -312,6 +318,12 @@ public class PicsArtUserPage extends PicsArtBasePage{
 		nameField.click();
 		nameField.clear();
 		nameField.sendKeys(changeUserName);
+		return new PicsArtUserPage(driver);
+	}
+	
+	public PicsArtUserPage fillInTheSearchField() {
+		searchField.click();
+		searchField.sendKeys("anime");
 		return new PicsArtUserPage(driver);
 	}
 	
