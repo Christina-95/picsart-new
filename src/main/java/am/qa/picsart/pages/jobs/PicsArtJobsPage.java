@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import am.qa.picsart.pages.base.PicsArtBasePage;
-import am.qa.picsart.pages.jobs.vacancies.PicsArtVacanciesPage;
 
 public class PicsArtJobsPage extends PicsArtBasePage{
 
@@ -35,7 +34,7 @@ public class PicsArtJobsPage extends PicsArtBasePage{
 	public WebElement locationText;
 	
 	@FindBy (xpath = CONTINUE_ON_JOBS_BUTTON)
-	WebElement continueOnJobsButton;
+	public WebElement continueOnJobsButton;
 	
 	@FindBy (xpath = ENGINEERING_LINK)
 	public WebElement engineeringLink;
@@ -57,11 +56,5 @@ public class PicsArtJobsPage extends PicsArtBasePage{
 		else return false;	
 	}
 	
-	public PicsArtVacanciesPage clickOnContinueOnJobsBtn() throws InterruptedException {
-		Thread.sleep(2000);
-		continueOnJobsButton.click();
-		System.out.println("Continue On Jobs Button was clicked");
-		return new PicsArtVacanciesPage(driver);
-	}
 	
 }

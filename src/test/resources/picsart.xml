@@ -4,7 +4,7 @@
 		<classes>
 			<class name="am.qa.picsart.test.PicsArtTest">
 				<methods>
-			   		<include name="testEditingTools" />
+		     		<include name="testEditingTools" />
 					<include name="testRemoveBackground" />
 					<include name="testGoToToolsBtn" />
 					<include name="testUserPosts" />
@@ -17,13 +17,11 @@
 					<include name="testPicksImagesOptions" />   
 					<include name="testUserOptions" /> 
 					<include name="testAppsLink" /> 
+					<include name="testPicsArtGold" />
 					<include name="testChangeNameOption" />
-					<include name="" />
-					<include name="" />
-					<include name="" />
-					<include name="" />
-					<include name="" />
-					<include name="" />
+					<include name="testFollowedArtistIsDisplayed" />
+					<include name="testRetypeNewPassword" />
+					<include name="testChangePassword" />
 				</methods>
 
 

@@ -31,12 +31,5 @@ public class PicsArtLoginPage extends PicsArtBasePage {
 	public WebElement errorMessage;
 	
 	
-	public void signIn() throws InterruptedException{
-		Thread.sleep(2000);
-		usernameOrEmailField.sendKeys("tinat6043@gmail.com");
-		passwordField.sendKeys("12345678");
-		Thread.sleep(1000);
-		signInButton.click();
-	}
 
 }

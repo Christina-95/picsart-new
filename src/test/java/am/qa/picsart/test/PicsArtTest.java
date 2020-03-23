@@ -26,7 +26,7 @@ public class PicsArtTest extends PicsArtBaseTest {
 	
 	
 	@Test
-	public void testCareersLink() throws InterruptedException {
+	public void testCareersLink() {
 		//Test Case ID:1
 		//Given that the user is authenticated 
 		//when the user selects the "Career" section and the "PicsArt Careers" page is displayed and clicks the "View Jobs" button
@@ -36,19 +36,22 @@ public class PicsArtTest extends PicsArtBaseTest {
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//1.1:Click on "Careers" link
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		userPage.clickOnCareersLink();
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(userPage.careersLink));
+		userPage.careersLink.click();
 		
 		//1.2:Click the "View Jobs" button
 		PicsArtJobsPage jobsPage = new PicsArtJobsPage(driver);
+		wait.until(ExpectedConditions.visibilityOf(jobsPage.viewJobsButton));
 		jobsPage.clickOnViewJobsButton();
 		
 		//Validate that the current vacancies are displayed
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(jobsPage.departmentsText));
 		Assert.assertTrue(jobsPage.departmentsText.isDisplayed());
 	}
 	
 	@Test 
-	public void testVacanciesPage() throws InterruptedException {
+	public void testVacanciesPage() {
 		//Test Case ID:2
 		//Given that the user is authenticated and  is on the "PicsArt Careers" page
 		//when the user clicks the "Continue on Jobs" button
@@ -58,14 +61,18 @@ public class PicsArtTest extends PicsArtBaseTest {
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//2.1:Click on "Careers" link
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		userPage.clickOnCareersLink();
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(userPage.careersLink));
+		userPage.careersLink.click();
 		
 		//2.2:Click the "View Jobs" button
 		PicsArtJobsPage jobsPage = new PicsArtJobsPage(driver);
+		wait.until(ExpectedConditions.visibilityOf(jobsPage.viewJobsButton));
 		jobsPage.clickOnViewJobsButton();
 		
 		//2.3:Click the "Continue on Jobs" button
-		jobsPage.clickOnContinueOnJobsBtn();
+		wait.until(ExpectedConditions.visibilityOf(jobsPage.continueOnJobsButton));
+		jobsPage.continueOnJobsButton.click();
 		
 		//validate that the picsart.com/jobs/vacancies page is opened
 		PicsArtVacanciesPage vacanciesPage = new PicsArtVacanciesPage(driver);
@@ -86,7 +93,7 @@ public class PicsArtTest extends PicsArtBaseTest {
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(userPage.careersLink));
-		userPage.clickOnCareersLink();
+		userPage.careersLink.click();
 		
 		//3.2:Click the "View Jobs" button
 		PicsArtJobsPage jobsPage = new PicsArtJobsPage(driver);
@@ -171,7 +178,7 @@ public class PicsArtTest extends PicsArtBaseTest {
         
 	}
 	
-	public void testEditingTools() throws InterruptedException {
+	public void testEditingTools() {
 		//Test Case ID:5
 		//Given that the user is authenticated
 		//when the user clicks the "Start Editing" button
@@ -181,56 +188,64 @@ public class PicsArtTest extends PicsArtBaseTest {
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//5.1.Click the "Start Editing" button
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		userPage.clickOnStartEditingButton();
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(userPage.startEditingButton));
+		userPage.startEditingButton.click();
 		
 		//validate that the Editing Tools page is displayed
 		PicsArtEditingToolsPage toolsPage = new PicsArtEditingToolsPage(driver);
+		wait.until(ExpectedConditions.visibilityOf(toolsPage.editingToolsPageTitle));
 		Assert.assertTrue(toolsPage.editingToolsPageTitle.isDisplayed());
 	
 	}
 	
 	@Test
-	public void testRemoveBackground() throws InterruptedException {
+	public void testRemoveBackground() {
 		//Test Case ID:6
 		//Given that the user is on the "Editing Tools" page
 		//when the user selects the "Remove Background" filter, selects one of the images,edits it,clicks on the "Share" button and clicks on the "Post" button
-		//then the user gets the "Successfully Posted" message
+		//then the "Successfully Posted" message is displayed
 
 
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//6.1.Click the "Start Editing" button
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		userPage.clickOnStartEditingButton();
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(userPage.startEditingButton));
+		userPage.startEditingButton.click();
 		
 		//6.2.Select the "Remove Background" filter
 		PicsArtEditingToolsPage toolsPage = new PicsArtEditingToolsPage(driver);
-		toolsPage.clickOnRemoveBackgroundFilter();
+		wait.until(ExpectedConditions.visibilityOf(toolsPage.removeBackgroundFilter));
+		toolsPage.removeBackgroundFilter.click();
 		
 		//6.3.Select one of the suggested images
 		PicsArtUploadSelectImagePage uploadImage = new PicsArtUploadSelectImagePage(driver);
-		uploadImage.clickOnRandomImage();
+		wait.until(ExpectedConditions.visibilityOf(uploadImage.randomImage));
+		uploadImage.randomImage.click();
 		
 		//6.4.Click the "Share" button
 		PicsArtRemoveBackgroundEditingPage removeBackgroundPage = new PicsArtRemoveBackgroundEditingPage(driver);
-		Thread.sleep(2000);
-		removeBackgroundPage.clickOnShareButton();
+		wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.shareButton));
+		removeBackgroundPage.shareButton.click();
 		
 		//validate that the Pop-up is displayed
+		wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.postButton));
+		wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.popUpTitle));
 		Assert.assertTrue(removeBackgroundPage.postButton.isDisplayed() && removeBackgroundPage.popUpTitle.isDisplayed());
 		
 		//6.5.Click the "Post" button
-		Thread.sleep(3000);
-		removeBackgroundPage.clickOnPostButton();
+		wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.postButton));
+		removeBackgroundPage.postButton.click();
 		
 		//validate that the success message is diplayed 
-		//wait.waitForElementPresent(removeBackgrounPage.successfullypostedMessage);
-		Thread.sleep(30000);
+		wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.successfullypostedMessage));
 		Assert.assertTrue(removeBackgroundPage.successfullypostedMessage.isDisplayed());
 		
 	}
 	
 	@Test
-	public void testGoToToolsBtn() throws InterruptedException {
+	public void testGoToToolsBtn() {
 		//Test Case ID:7
 		//Given that the user is on the "Editing Tools" page
 		//when the user selects the "Remove Background" filter, selects one of the images, edits it, clicks on the "Share" button, clicks on the "Post" button, gets the "Successfully Posted" message and clicks the "Go to Tools" button
@@ -240,34 +255,39 @@ public class PicsArtTest extends PicsArtBaseTest {
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//7.1.Click the "Start Editing" button
 		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		userPage.clickOnStartEditingButton();
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(userPage.startEditingButton));
+		userPage.startEditingButton.click();
 		
 		//7.2.Select the "Remove Background" filter
 		PicsArtEditingToolsPage toolsPage = new PicsArtEditingToolsPage(driver);
-		toolsPage.clickOnRemoveBackgroundFilter();
+		wait.until(ExpectedConditions.visibilityOf(toolsPage.removeBackgroundFilter));
+		toolsPage.removeBackgroundFilter.click();
 		
 		//7.3.Select one of the suggested images
 		PicsArtUploadSelectImagePage uploadImage = new PicsArtUploadSelectImagePage(driver);
-		uploadImage.clickOnRandomImage();
+		wait.until(ExpectedConditions.visibilityOf(uploadImage.randomImage));
+		uploadImage.randomImage.click();
 		
 		//7.4.Click the "Share" button
 		PicsArtRemoveBackgroundEditingPage removeBackgroundPage = new PicsArtRemoveBackgroundEditingPage(driver);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.shareButton));
-		removeBackgroundPage.clickOnShareButton();
+		removeBackgroundPage.shareButton.click();
 		
 		//7.5.Click the "Post" button
 		wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.postButton));
-		removeBackgroundPage.clickOnPostButton();
+		removeBackgroundPage.postButton.click();
 		
 		//validate that the success message is diplayed 
 		wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.successfullypostedMessage));
 		Assert.assertTrue(removeBackgroundPage.successfullypostedMessage.isDisplayed());
 		
 		//7.6.Click the "Go to Tools" button
-		removeBackgroundPage.clickOnGoToToolsBtn();
+		wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.goToToolsBtn));
+		removeBackgroundPage.goToToolsBtn.click();
 		
 		//validate that the Editing Tools page is displayed
+		wait.until(ExpectedConditions.visibilityOf(toolsPage.editingToolsPageTitle));
 		Assert.assertTrue(toolsPage.editingToolsPageTitle.isDisplayed());
 		
 	}
@@ -696,6 +716,51 @@ public class PicsArtTest extends PicsArtBaseTest {
 
 	}
 		
-	
+	@Test 
+	public void testRetypeNewPassword() {
+		//Test Case ID:21
+		//Given that the user is authenticated
+		//when the user changes her/his profile password and types old password in the "Retype new password" field
+		//then the error message is displayed
+
+
+		//Login with correct credentials -- Done in PicsArtBaseTest
+		//21.1.Click on the user avatar beside "Get the app" button
+		PicsArtUserPage userPage = new PicsArtUserPage(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(userPage.userAvatar));
+		userPage.clickOnUserAvatar();
+				
+		//21.2.Click on the "Settings" link
+		wait.until(ExpectedConditions.visibilityOf(userPage.settingsLink));
+		userPage.settingsLink.click();
+				
+		//21.3.Click on the "Change" button beside Password field
+		wait.until(ExpectedConditions.visibilityOf(userPage.changePasswordButton));
+		userPage.changePasswordButton.click();
+				
+		//21.4.Fill in the "Current Password" and  "New Password" 
+		wait.until(ExpectedConditions.visibilityOf(userPage.currentPasswordField));
+		userPage.currentPasswordField.click();
+		userPage.currentPasswordField.sendKeys("12345678");
+		wait.until(ExpectedConditions.visibilityOf(userPage.newPasswordField));
+		userPage.newPasswordField.click();
+		userPage.newPasswordField.sendKeys("123456789");
+		
+		//21.5.Fill in the "Retype new password" field with an old password
+		wait.until(ExpectedConditions.visibilityOf(userPage.retypeNewPassword));
+		userPage.retypeNewPassword.click();
+		userPage.retypeNewPassword.sendKeys("12345678");
+		
+				
+		//21.6.Click on the "Save Changes" button
+		wait.until(ExpectedConditions.visibilityOf(userPage.saveChangesButton));
+		userPage.saveChangesButton.click();
+		
+		//validate that the error message is displayed
+		wait.until(ExpectedConditions.visibilityOf(userPage.newPasswordDoesntMatchErrorMessage));
+		Assert.assertTrue(userPage.newPasswordDoesntMatchErrorMessage.isDisplayed());
+		
+	}
 	
 }

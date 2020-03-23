@@ -20,7 +20,7 @@ public class PicsArtBasePage {
 	public WebElement loginButton;
 	
 	@FindBy (xpath = CLOSE_POP_UP)
-	WebElement closePopUp;
+	public WebElement closePopUp;
 	
 	public WebDriver driver;
 	
@@ -48,11 +48,10 @@ public class PicsArtBasePage {
 		Actions actions= new Actions(driver);
 		actions.moveToElement(element).build().perform();
 	}
-
-	public void clicOnPopUp() throws InterruptedException {
-		Thread.sleep(5000);
+	
+	
+	public void moveToClosePopUp() {
 		moveToElement(closePopUp);
-		closePopUp.click();
 	}
 	
 	

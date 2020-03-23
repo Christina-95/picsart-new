@@ -25,7 +25,7 @@ public class PicsArtBaseTest {
 	
 		
 		@BeforeTest()
-		public void prepareEnv() throws IOException, InterruptedException {
+		public void prepareEnv() throws IOException {
 			properties = new Properties();
 			properties.load(getClass().getClassLoader().getResourceAsStream("readProperty.properties"));
 			System.setProperty("webdriver.chrome.driver", properties.getProperty("chromeDriver"));
@@ -33,12 +33,21 @@ public class PicsArtBaseTest {
 			driver.get(HOME_PAGE_URL);
 			//driver.manage().window().maximize();
 			PicsArtBasePage page = new PicsArtBasePage(driver);
-			page.clicOnPopUp();
 			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.visibilityOf(page.closePopUp));
+			page.moveToClosePopUp();
+			page.closePopUp.click();
 			wait.until(ExpectedConditions.visibilityOf(page.loginButton));
-	        page.clickOnLoginButton();
+			page.loginButton.click();
 	        PicsArtLoginPage loginPage = new PicsArtLoginPage(driver);
-	        loginPage.signIn();
+	        wait.until(ExpectedConditions.visibilityOf(loginPage.usernameOrEmailField));
+	        loginPage.usernameOrEmailField.click();
+	        loginPage.usernameOrEmailField.sendKeys("tinat6043@gmail.com");
+	        wait.until(ExpectedConditions.visibilityOf(loginPage.passwordField));
+	        loginPage.passwordField.click();
+	        loginPage.passwordField.sendKeys("12345678");
+	        wait.until(ExpectedConditions.visibilityOf(loginPage.signInButton));
+			loginPage.signInButton.click();
 	        PicsArtUserPage userPage = new PicsArtUserPage(driver);
 	        userPage.validateLoggedInUser();
 			

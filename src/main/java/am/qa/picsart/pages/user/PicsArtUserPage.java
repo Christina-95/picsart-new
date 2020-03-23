@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import am.qa.picsart.pages.base.PicsArtBasePage;
-import am.qa.picsart.pages.editingtools.PicsArtEditingToolsPage;
-import am.qa.picsart.pages.jobs.PicsArtJobsPage;
 import am.qa.picsart.pages.support.PicsArtSupportPage;
 
 public class PicsArtUserPage extends PicsArtBasePage{
@@ -70,6 +68,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String SEARCH_FIELD = "//input[@type='search']";
 	protected final String ARTISTS_LINK = "//a[@data-js-ga-click='search select-category artists']";
 	protected final String FOLLOWING_LINK = "//a[@href='/u/tinat6043/following']";
+	protected final String NEW_PASSWORD_DOES_NOT_MATCH_ERROR = "//div[@class='err-message']";
 	
 	
 	
@@ -83,7 +82,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	public WebElement careersLink;
 	
 	@FindBy (xpath = START_EDITING_Button)
-	WebElement startEditingButton;
+	public WebElement startEditingButton;
 	
 	@FindBy (xpath = USERNAME_LINK)
 	public WebElement userNameLink;
@@ -205,6 +204,8 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	@FindBy (xpath = FOLLOWING_LINK)
 	public WebElement followingLink;
 	
+	@FindBy (xpath = NEW_PASSWORD_DOES_NOT_MATCH_ERROR)
+	public WebElement newPasswordDoesntMatchErrorMessage;
 	
 	
 	
@@ -213,17 +214,6 @@ public class PicsArtUserPage extends PicsArtBasePage{
 		if (userAvatar.isDisplayed())
 			return true;
 		else return false;
-	}
-	
-	public PicsArtJobsPage clickOnCareersLink() {
-		careersLink.click();
-		return new PicsArtJobsPage(driver);
-	}
-
-	public PicsArtEditingToolsPage clickOnStartEditingButton() throws InterruptedException {
-		Thread.sleep(1000);
-		startEditingButton.click();
-		return new PicsArtEditingToolsPage(driver);
 	}
 
 	public PicsArtUserPage clickOnUserAvatar() {

@@ -6,7 +6,7 @@
 				<methods>
 				    <include name="testCareersLink" />
 		      	  	<include name="testVacanciesPage" /> 
-					<include name="testVacanciesByDepartmentsAndLocation" />
+					<include name="testVacanciesByDepartmentsAndLocation" /> 
 					</methods>
 			</class>
 		</classes>
