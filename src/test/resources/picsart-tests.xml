@@ -1,0 +1,110 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="PicsArt suite" verbose="1">
+	<test name="PicsArt Tests">
+		<classes>
+			<class name="am.qa.picsart.test.careers.PicsArtCareerTests">
+				<methods>
+					<include name="testCareersLink" />
+					<include name="testVacanciesPage" />
+					<include name="testVacanciesByDepartmentsAndLocation" />
+				</methods>
+			</class>
+
+			<class name="am.qa.picsart.test.apps.PicsArtAppsLinkTest">
+				<methods>
+					<include name="testAppsLink" />
+				</methods>
+			</class>
+
+			<class name="am.qa.picsart.test.apps.PicsArtGetTheAppTest">
+				<methods>
+					<include name="testGetTheAppButton" />
+				</methods>
+			</class>
+
+			<class
+				name="am.qa.picsart.test.editingtools.PicsArteditingToolsTests">
+				<methods>
+					<include name="testEditingTools" />
+					<include name="testRemoveBackground" />
+					<include name="testGoToToolsBtn" />
+				</methods>
+			</class>
+
+			<class
+				name="am.qa.picsart.test.gold.PicsArtGoldStartFreeTrialTest">
+				<methods>
+					<include name="testPicsArtGoldStartFreeTrialButton" />
+				</methods>
+			</class>
+
+			<class name="am.qa.picsart.test.images.PicsArtImageOptionsTest">
+				<methods>
+					<include name="testImageOptions" />
+				</methods>
+			</class>
+
+			<class
+				name="am.qa.picsart.test.images.PicsArtPicksImagesOptionsTest">
+				<methods>
+					<include name="testPicksImagesOptions" />
+				</methods>
+			</class>
+
+			<class name="am.qa.picsart.test.store.PicsArtStoreTest">
+				<methods>
+					<include name="testPicsArtStoreLink" />
+				</methods>
+			</class>
+
+			<class name="am.qa.picsart.test.support.PicsArtSupportTest">
+				<methods>
+					<include name="testSupportPageLanguage" />
+				</methods>
+			</class>
+
+			<class
+				name="am.qa.picsart.test.user.PicsArtChangeTheNameOptionTest">
+				<methods>
+					<include name="testChangeNameOption" />
+				</methods>
+			</class>
+
+			<class name="am.qa.picsart.test.user.PicsArtFollowedArtistTest">
+				<methods>
+					<include name="testFollowedArtistIsDisplayed" />
+				</methods>
+			</class>
+
+			<class
+				name="am.qa.picsart.test.user.PicsArtSaveToCollectionTest">
+				<methods>
+					<include name="testSaveToCollectionOption" />
+				</methods>
+			</class>
+
+			<class name="am.qa.picsart.test.user.PicsArtUserOptionsTest">
+				<methods>
+					<include name="testUserOptions" />
+				</methods>
+			</class>
+
+			<class name="am.qa.picsart.test.user.PicsArtUserPostsTests">
+				<methods>
+					<include name="testUserPosts" />
+					<include name="testPostedImageOptions" />
+				</methods>
+			</class>
+
+			<class
+				name="am.qa.picsart.test.password.PicsArtChangePasswordTests">
+				<methods>
+					<include name="testRetypeNewPassword" />
+				<!--<include name="testChangePassword" /> -->
+				</methods>
+			</class>
+
+
+		</classes>
+	</test>
+</suite>
