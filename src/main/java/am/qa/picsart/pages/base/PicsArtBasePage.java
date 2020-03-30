@@ -51,6 +51,7 @@ public class PicsArtBasePage {
 	
 	
 	public void moveToClosePopUp() {
+
 		moveToElement(closePopUp);
 	}
 	

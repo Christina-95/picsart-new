@@ -69,6 +69,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String ARTISTS_LINK = "//a[@data-js-ga-click='search select-category artists']";
 	protected final String FOLLOWING_LINK = "//a[@href='/u/tinat6043/following']";
 	protected final String NEW_PASSWORD_DOES_NOT_MATCH_ERROR = "//div[@class='err-message']";
+	protected final String COMMUNITY_GUIDELINES_LINK = "//a[@data-js-active='community-guidelines']";
 	
 	
 	
@@ -206,6 +207,9 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	
 	@FindBy (xpath = NEW_PASSWORD_DOES_NOT_MATCH_ERROR)
 	public WebElement newPasswordDoesntMatchErrorMessage;
+
+	@FindBy (xpath = COMMUNITY_GUIDELINES_LINK)
+	public WebElement communityGuidelinesLink;
 	
 	
 	
