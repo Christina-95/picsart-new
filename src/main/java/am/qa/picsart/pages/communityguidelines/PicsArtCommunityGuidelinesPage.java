@@ -16,6 +16,6 @@ public class PicsArtCommunityGuidelinesPage extends PicsArtBasePage {
     @FindBy (xpath = HERE_LINK)
     public WebElement hereLink;
 
-    @FindBy (xpath COMMUNITY_GUIDELINES_TITLE)
+    @FindBy (xpath = COMMUNITY_GUIDELINES_TITLE)
     public WebElement communityGuidelinesTitle;
 }

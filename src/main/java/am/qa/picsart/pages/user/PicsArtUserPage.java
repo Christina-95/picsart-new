@@ -40,7 +40,6 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	public String LAST_CREATED_COLLECTION = "//a[@class='content clearfix']//*[text()='"+collectionName+"']";	
 	protected final String PICSART_STORE_LINK = "//a[contains(text(),'PicsArt Store')]";
 	protected final String SUPPORT_LINK = "//a[contains(text(),'Support')]";
-	protected final String PLUS_BUTTON = "//i[@class='svg-upload-photo-plus']";
 	protected final String SHARE_BUTTON = "//*[@class='icon-share-grid']";
 	protected final String LIKE_AND_COMMENT_BUTTON = "//div[@class='c-like-button notifier-hover-toggle like-button ']";
 	protected final String SAVE_TO_COLLECTION_BUTTON = "//div[contains(@data-js-ga-click,'photo add-to-collection')]";
@@ -70,7 +69,8 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String FOLLOWING_LINK = "//a[@href='/u/tinat6043/following']";
 	protected final String NEW_PASSWORD_DOES_NOT_MATCH_ERROR = "//div[@class='err-message']";
 	protected final String COMMUNITY_GUIDELINES_LINK = "//a[@data-js-active='community-guidelines']";
-	
+	protected final String UPWARDS_ARROW = "//span[@class='icon-to-top-page']";
+	protected final String PICSART_WEB_TOOLS_TITLE = "//h1[contains(text(),'Check out the new PicsArt Web Tools!')]";
 	
 	
 	@FindBy (xpath = ARTISTS_LINK)
@@ -126,9 +126,6 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	
 	@FindBy (xpath = SUPPORT_LINK)
 	public WebElement supportLink;
-	
-	@FindBy (xpath = PLUS_BUTTON)
-	public WebElement plusButton;
 	
 	@FindBy (xpath = SHARE_BUTTON)
 	public WebElement share;
@@ -210,6 +207,12 @@ public class PicsArtUserPage extends PicsArtBasePage{
 
 	@FindBy (xpath = COMMUNITY_GUIDELINES_LINK)
 	public WebElement communityGuidelinesLink;
+
+	@FindBy(xpath = UPWARDS_ARROW)
+	public WebElement upwardsArrow;
+
+	@FindBy (xpath = PICSART_WEB_TOOLS_TITLE)
+	public WebElement picsartWebToolsTitle;
 	
 	
 	
@@ -283,11 +286,6 @@ public class PicsArtUserPage extends PicsArtBasePage{
 		driver.get(supportPage);
 		supportLink.click();
 		return new PicsArtSupportPage(driver);
-	}
-	
-	public PicsArtUserPage clickOnOlusButton() {
-		plusButton.click();
-		return new PicsArtUserPage(driver);
 	}
 	
 	public PicsArtUserPage fillInTheCurrentPasswordField() {
