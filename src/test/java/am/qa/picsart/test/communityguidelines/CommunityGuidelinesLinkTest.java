@@ -35,6 +35,7 @@ public class CommunityGuidelinesLinkTest extends PicsArtBaseTest {
         communityGuidelinesPage.hereLink.click();
 
         //validate that the "COPYRIGHT DISPUTE POLICY" page is displayed
+        driver.get("picsart.com/copyright-dispute-policy");
         PicsArtCopyrightDisputePolicyPage copyrightDisputePolicyPage = new PicsArtCopyrightDisputePolicyPage(driver);
         wait.until(ExpectedConditions.visibilityOf(copyrightDisputePolicyPage.copirightDisputePolicyTitle);
         Assert.assertTrue(copyrightDisputePolicyPage.copirightDisputePolicyTitle.isDisplayed());
