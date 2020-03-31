@@ -71,7 +71,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String COMMUNITY_GUIDELINES_LINK = "//a[@data-js-active='community-guidelines']";
 	protected final String UPWARDS_ARROW = "//span[@class='icon-to-top-page']";
 	protected final String PICSART_WEB_TOOLS_TITLE = "//h1[contains(text(),'Check out the new PicsArt Web Tools!')]";
-	
+	protected final String PRESS_CENTER_LINK = "//a[contains(text(),'Press Center')]";
 	
 	@FindBy (xpath = ARTISTS_LINK)
 	public WebElement artistsLink;
@@ -213,6 +213,9 @@ public class PicsArtUserPage extends PicsArtBasePage{
 
 	@FindBy (xpath = PICSART_WEB_TOOLS_TITLE)
 	public WebElement picsartWebToolsTitle;
+
+	@FindBy (xpath = PRESS_CENTER_LINK)
+	public WebElement pressCenterLink;
 	
 	
 	
