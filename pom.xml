@@ -26,11 +26,20 @@
 				<version>2.14.1</version>
 				<configuration>
 					<suiteXmlFiles>
+						<!--suppress UnresolvedMavenProperty -->
 						<suiteXmlFile>src/test/resources/${testng}.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
+                </configuration>
+            </plugin>
 
-		</plugins>
+        </plugins>
 	</build>
 </project>
