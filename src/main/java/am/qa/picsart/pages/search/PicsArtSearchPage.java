@@ -31,6 +31,9 @@ public class PicsArtSearchPage extends PicsArtBasePage {
 
     @FindBy (xpath = HASHTAGS_LINK)
     public WebElement hashtagLink;
+    
+    @FindBy (xpath = ARTISTS_LINK)
+    public WebElement artistsLink;
 
     @FindBy (xpath = NATURE_HASHTAG)
     public WebElement natureHashtag;
