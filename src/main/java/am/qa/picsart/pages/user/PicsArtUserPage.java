@@ -73,7 +73,8 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String PICSART_WEB_TOOLS_TITLE = "//h1[contains(text(),'Check out the new PicsArt Web Tools!')]";
 	protected final String PRESS_CENTER_LINK = "//a[contains(text(),'Press Center')]";
 	protected final String CHALLENGES_LINK = "//a[contains(@data-js-ga-click,'top-menu open challenges')]";
-	
+	protected final String BLOG_LINK = "//a[@data-js-active='blog']";
+
 	@FindBy (xpath = ARTISTS_LINK)
 	public WebElement artistsLink;
 	
@@ -220,6 +221,9 @@ public class PicsArtUserPage extends PicsArtBasePage{
 
 	@FindBy (xpath = CHALLENGES_LINK)
 	public WebElement challengesLink;
+
+	@FindBy (xpath = BLOG_LINK)
+	public WebElement blogLink;
 
 	
 	
