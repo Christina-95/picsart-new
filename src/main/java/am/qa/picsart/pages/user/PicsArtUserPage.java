@@ -75,6 +75,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String CHALLENGES_LINK = "//a[contains(@data-js-ga-click,'top-menu open challenges')]";
 	protected final String BLOG_LINK = "//a[@data-js-active='blog']";
 
+
 	@FindBy (xpath = ARTISTS_LINK)
 	public WebElement artistsLink;
 	
