@@ -15,7 +15,10 @@ public class ChallengesTest extends PicsArtBaseTest {
         //Test Case ID:26
         //Given that the user is authenticated
         //when the user clicks on the "Challenges"
-        //then the "Active Challenges", "Voting Challenges", "Freestyle Challenges", "Collage Challenges", "Image Remix Challenges", "Editing Challenges", "Sticker Challenges", "Photography Challenges", "Sticker Remix Challenges" and  "Drawing Challenges" are displayed
+        //then the "Active Challenges", "Voting Challenges", "Freestyle Challenges",
+        //"Collage Challenges", "Image Remix Challenges", "Editing Challenges",
+        //"Sticker Challenges", "Photography Challenges",
+        //"Sticker Remix Challenges" and  "Drawing Challenges" are displayed
 
 
         //Login with correct credentials -- Done in PicsArtBaseTest
