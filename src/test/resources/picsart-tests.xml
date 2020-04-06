@@ -23,7 +23,7 @@
 			</class>
 
 			<class
-				name="am.qa.picsart.test.editingtools.PicsArteditingToolsTests">
+				name="am.qa.picsart.test.editingtools.PicsArtEditingToolsTest">
 				<methods>
 					<include name="testEditingTools" />
 					<include name="testRemoveBackground" />
@@ -136,6 +136,13 @@
 					name="am.qa.picsart.test.blog.PicsArtJapanTest">
 				<methods>
 					<include name="testPicsArtJapan" />
+				</methods>
+			</class>
+
+			<class
+					name="am.qa.picsart.test.editingtools.TemplateEditorTest">
+				<methods>
+					<include name="testTemplateEditor" />
 				</methods>
 			</class>
 
