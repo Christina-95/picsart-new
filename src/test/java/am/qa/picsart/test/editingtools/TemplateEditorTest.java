@@ -34,7 +34,7 @@ public class TemplateEditorTest extends PicsArtBaseTest {
 
         //28.2.Choose one of the images
         PicsArtUploadSelectImagePage uploadImage = new PicsArtUploadSelectImagePage(driver);
-        wait.until(ExpectedConditions.visibilityOf(uploadImage.randomImage));
+        wait.until(ExpectedConditions.elementToBeClickable(uploadImage.randomImage));
         uploadImage.randomImage.click();
 
         //validate that the "Templates", "Photo", "Stickers", "Text", "Shape" and "Overlays" categories are displayed

@@ -146,6 +146,13 @@
 				</methods>
 			</class>
 
+			<class
+					name="am.qa.picsart.test.editingtools.PixelStretchEffectsTest">
+				<methods>
+					<include name="testPixelStretchEffects" />
+				</methods>
+			</class>
+
 
 		</classes>
 	</test>
