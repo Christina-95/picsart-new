@@ -76,6 +76,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String BLOG_LINK = "//a[@data-js-active='blog']";
 
 
+
 	@FindBy (xpath = ARTISTS_LINK)
 	public WebElement artistsLink;
 	
@@ -226,7 +227,6 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	@FindBy (xpath = BLOG_LINK)
 	public WebElement blogLink;
 
-	
 	
 	
 	public boolean validateLoggedInUser() {
