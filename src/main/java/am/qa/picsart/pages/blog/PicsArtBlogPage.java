@@ -10,7 +10,7 @@ public class PicsArtBlogPage extends PicsArtBasePage {
         super(driver);
     }
 
-    protected final String PICSART_JAPAN_LINK = "";
+    protected final String PICSART_JAPAN_LINK = "//a[contains(text(),'PicsArt Japan')]";
 
     @FindBy (xpath = PICSART_JAPAN_LINK)
     public WebElement picsartJapanLink;
