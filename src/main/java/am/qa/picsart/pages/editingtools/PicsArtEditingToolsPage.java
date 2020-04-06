@@ -14,15 +14,19 @@ public class PicsArtEditingToolsPage extends PicsArtBasePage {
 	
 	
 	protected final String EDITING_TOOLS_PAGE_TITLE = "//h1[@class='editing-tools-title']";
-	public static final String REMOVE_BACKGROUN_FILTER = "//h4[contains(text(),'Remove Background')]";
+	protected final String REMOVE_BACKGROUND = "//h4[contains(text(),'Remove Background')]";
+	protected final String TEMPLATE_EDITOR = "//img[@alt='Template Editor']";
 	
 	
 	
 	@FindBy (xpath = EDITING_TOOLS_PAGE_TITLE)
 	public WebElement editingToolsPageTitle;
 	
-	@FindBy (xpath = REMOVE_BACKGROUN_FILTER)
+	@FindBy (xpath = REMOVE_BACKGROUND)
 	public WebElement removeBackgroundFilter;
+
+	@FindBy (xpath = TEMPLATE_EDITOR)
+	public WebElement templateEditor;
 	
 	
 
