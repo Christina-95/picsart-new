@@ -11,9 +11,9 @@ public class PicsArtPixelStretchEffectsPage extends PicsArtBasePage {
         super(driver);
     }
 
-    protected final String STRETCH_CATEGORY = "";
-    protected final String SHARE_OPTION = "";
-    protected final String DOWNLOAD_OPTION = "";
+    protected final String STRETCH_CATEGORY = "//div[@id='runout-category']";
+    protected final String SHARE_OPTION = "//span[contains(.,'Share')]";
+    protected final String DOWNLOAD_OPTION = "//i[@class='icon-download']";
 
     @FindBy (xpath = STRETCH_CATEGORY)
     public WebElement stretchCategory;
