@@ -125,6 +125,13 @@
 				</methods>
 			</class>
 
+			<class
+					name="am.qa.picsart.test.challenges.ChallengesTest">
+				<methods>
+					<include name="testChallengesLink" />
+				</methods>
+			</class>
+
 
 		</classes>
 	</test>
