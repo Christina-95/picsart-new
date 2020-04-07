@@ -160,6 +160,12 @@
 				</methods>
 			</class>
 
+			<class
+					name="am.qa.picsart.test.editingtools.SketchEffectsTest">
+				<methods>
+					<include name="testSketchEffects" />
+				</methods>
+			</class>
 
 		</classes>
 	</test>

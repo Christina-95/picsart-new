@@ -19,6 +19,7 @@ public class EditingToolsPage extends PicsArtBasePage {
 	protected final String PIXEL_STRETCH_EFFECTS = "//img[@alt='Stretch Effect']";
 	protected final String CHANGE_BACKGROUND = "//img[@alt='Change Background']";
 	protected final String ADD_STICKER = "//img[@alt='Add Sticker']";
+	protected final String SKETCH_EFFECTS = "//img[@alt='Sketch Effects']";
 	
 	
 	
@@ -39,5 +40,8 @@ public class EditingToolsPage extends PicsArtBasePage {
 
 	@FindBy (xpath = ADD_STICKER)
 	public WebElement addSticker;
+
+	@FindBy (xpath = SKETCH_EFFECTS)
+	public WebElement sketchEffects;
 
 }
