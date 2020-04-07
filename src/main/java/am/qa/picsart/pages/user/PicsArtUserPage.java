@@ -20,6 +20,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	int a = random.nextInt(99) + 10;
 	public String collectionName = "Collection" + a;
 	public String changeUserName = "tina" + a;
+	public int i = 1;
 	
 	
 	protected final String USER_AVATAR = "//img[@class='c-image-check js-user-avatar']";
@@ -74,6 +75,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String PRESS_CENTER_LINK = "//a[contains(text(),'Press Center')]";
 	protected final String CHALLENGES_LINK = "//a[contains(@data-js-ga-click,'top-menu open challenges')]";
 	protected final String BLOG_LINK = "//a[@data-js-active='blog']";
+	public String POST_LINK = "//a[contains(.,'"+i+++"''Posts')]";
 
 
 
@@ -226,6 +228,7 @@ public class PicsArtUserPage extends PicsArtBasePage{
 
 	@FindBy (xpath = BLOG_LINK)
 	public WebElement blogLink;
+
 
 	
 	

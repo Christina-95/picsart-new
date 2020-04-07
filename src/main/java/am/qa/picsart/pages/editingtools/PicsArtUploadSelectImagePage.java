@@ -14,7 +14,7 @@ public class PicsArtUploadSelectImagePage  extends PicsArtBasePage {
 	
 	PicsArtBasePage wait = new PicsArtBasePage(driver);
 	
-	public static final String RANDOM_IMAGE = "(//img[@alt='img'])[21]";
+	public static final String RANDOM_IMAGE = "(//img[@alt='img'])[1]";
 	
 	
 	@FindBy (xpath = RANDOM_IMAGE)
