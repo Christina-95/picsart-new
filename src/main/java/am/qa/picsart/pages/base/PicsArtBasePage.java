@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import am.qa.picsart.pages.login.PicsArtLoginPage;
+import am.qa.picsart.pages.login.LoginPage;
 
 public class PicsArtBasePage {
 	
@@ -56,8 +56,8 @@ public class PicsArtBasePage {
 	}
 	
 	
-	public PicsArtLoginPage clickOnLoginButton() {
+	public LoginPage clickOnLoginButton() {
 		loginButton.click();
-		return new PicsArtLoginPage(driver);
+		return new LoginPage(driver);
 	}
 }

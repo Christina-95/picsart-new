@@ -1,6 +1,6 @@
 package am.qa.picsart.test.search;
 
-import am.qa.picsart.pages.search.PicsArtSearchPage;
+import am.qa.picsart.pages.search.SearchPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,7 +27,7 @@ public class SearchNatureTest extends PicsArtBaseTest {
         userPage.searchField.submit();
 
         //validate that the "All", "Stickers", "Images", "Hashtags" and "Artists" links are displayed
-        PicsArtSearchPage searchPage = new PicsArtSearchPage(driver);
+        SearchPage searchPage = new SearchPage(driver);
         wait.until(ExpectedConditions.elementToBeClickable(searchPage.allLink));
         Assert.assertTrue(searchPage.allLink.isDisplayed());
         wait.until(ExpectedConditions.elementToBeClickable(searchPage.stickersLink));

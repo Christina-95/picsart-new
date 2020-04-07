@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 
 import am.qa.picsart.pages.base.PicsArtBasePage;
 
-public class PicsArtRemoveBackgroundEditingPage  extends PicsArtBasePage {
+public class RemoveBackgroundEditingPage extends PicsArtBasePage {
 
-	public PicsArtRemoveBackgroundEditingPage(WebDriver driver) {
+	public RemoveBackgroundEditingPage(WebDriver driver) {
 		super(driver);
 	}
 
@@ -41,11 +41,11 @@ public class PicsArtRemoveBackgroundEditingPage  extends PicsArtBasePage {
 	
 
 	
-	public PicsArtRemoveBackgroundEditingPage clickOnGoToToolsBtn() throws InterruptedException {
+	public RemoveBackgroundEditingPage clickOnGoToToolsBtn() throws InterruptedException {
 		wait.waitForElementToBeClickable(goToToolsBtn);
 		Thread.sleep(1000);
 		goToToolsBtn.click();
-		return new PicsArtRemoveBackgroundEditingPage(driver);
+		return new RemoveBackgroundEditingPage(driver);
 	}
 
 }

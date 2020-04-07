@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PicsArtChallengesPage extends PicsArtBasePage {
-    public PicsArtChallengesPage(WebDriver driver) {
+public class ChallengesPage extends PicsArtBasePage {
+    public ChallengesPage(WebDriver driver) {
         super(driver);
     }
 

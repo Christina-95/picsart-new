@@ -5,13 +5,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import am.qa.picsart.pages.editingtools.PicsArtEditingToolsPage;
-import am.qa.picsart.pages.editingtools.PicsArtRemoveBackgroundEditingPage;
-import am.qa.picsart.pages.editingtools.PicsArtUploadSelectImagePage;
+import am.qa.picsart.pages.editingtools.EditingToolsPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 
-public class PicsArtEditingToolsTest extends PicsArtBaseTest{
+public class EditingToolsTest extends PicsArtBaseTest{
 
 	
 	@Test
@@ -30,7 +28,7 @@ public class PicsArtEditingToolsTest extends PicsArtBaseTest{
 		userPage.startEditingButton.click();
 		
 		//validate that the Editing Tools page is displayed
-		PicsArtEditingToolsPage toolsPage = new PicsArtEditingToolsPage(driver);
+		EditingToolsPage toolsPage = new EditingToolsPage(driver);
 		wait.until(ExpectedConditions.visibilityOf(toolsPage.editingToolsPageTitle));
 		Assert.assertTrue(toolsPage.editingToolsPageTitle.isDisplayed());
 	

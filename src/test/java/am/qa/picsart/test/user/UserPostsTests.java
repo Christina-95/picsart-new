@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 
-public class PicsArtUserPostsTests extends PicsArtBaseTest{
+public class UserPostsTests extends PicsArtBaseTest{
 	
 	@Test
 	public void testUserPosts() {

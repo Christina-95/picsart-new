@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PicsArtCopyrightDisputePolicyPage extends PicsArtBasePage {
-    public PicsArtCopyrightDisputePolicyPage(WebDriver driver) {
+public class CopyrightDisputePolicyPage extends PicsArtBasePage {
+    public CopyrightDisputePolicyPage(WebDriver driver) {
         super(driver);
     }
 

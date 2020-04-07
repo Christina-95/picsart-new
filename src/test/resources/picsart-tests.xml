@@ -10,20 +10,20 @@
 				</methods>
 			</class>
 
-			<class name="am.qa.picsart.test.apps.PicsArtAppsLinkTest">
+			<class name="am.qa.picsart.test.apps.AppsLinkTest">
 				<methods>
 					<include name="testAppsLink" />
 				</methods>
 			</class>
 
-			<class name="am.qa.picsart.test.apps.PicsArtGetTheAppTest">
+			<class name="am.qa.picsart.test.apps.GetTheAppTest">
 				<methods>
 					<include name="testGetTheAppButton" />
 				</methods>
 			</class>
 
 			<class
-				name="am.qa.picsart.test.editingtools.PicsArtEditingToolsTest">
+				name="am.qa.picsart.test.editingtools.EditingToolsTest">
 				<methods>
 					<include name="testEditingTools" />
 					<include name="testRemoveBackground" />
@@ -45,7 +45,7 @@
 			</class>
 
 			<class
-				name="am.qa.picsart.test.images.PicsArtPicksImagesOptionsTest">
+				name="am.qa.picsart.test.images.PicksImagesOptionsTest">
 				<methods>
 					<include name="testPicksImagesOptions" />
 				</methods>
@@ -64,32 +64,32 @@
 			</class>
 
 			<class
-				name="am.qa.picsart.test.user.PicsArtChangeTheNameOptionTest">
+				name="am.qa.picsart.test.user.ChangeTheNameOptionTest">
 				<methods>
 					<include name="testChangeNameOption" />
 				</methods>
 			</class>
 
-			<class name="am.qa.picsart.test.user.PicsArtFollowedArtistTest">
+			<class name="am.qa.picsart.test.user.FollowedArtistTest">
 				<methods>
 					<include name="testFollowedArtistIsDisplayed" />
 				</methods>
 			</class>
 
 			<class
-				name="am.qa.picsart.test.user.PicsArtSaveToCollectionTest">
+				name="am.qa.picsart.test.user.SaveToCollectionTest">
 				<methods>
 					<include name="testSaveToCollectionOption" />
 				</methods>
 			</class>
 
-			<class name="am.qa.picsart.test.user.PicsArtUserOptionsTest">
+			<class name="am.qa.picsart.test.user.UserOptionsTest">
 				<methods>
 					<include name="testUserOptions" />
 				</methods>
 			</class>
 
-			<class name="am.qa.picsart.test.user.PicsArtUserPostsTests">
+			<class name="am.qa.picsart.test.user.UserPostsTests">
 				<methods>
 					<include name="testUserPosts" />
 					<include name="testPostedImageOptions" />
@@ -97,7 +97,7 @@
 			</class>
 
 			<class
-				name="am.qa.picsart.test.password.PicsArtChangePasswordTests">
+				name="am.qa.picsart.test.password.ChangePasswordTests">
 				<methods>
 					<include name="testRetypeNewPassword" />
 				<!--<include name="testChangePassword" /> -->
@@ -150,6 +150,13 @@
 					name="am.qa.picsart.test.editingtools.PixelStretchEffectsTest">
 				<methods>
 					<include name="testPixelStretchEffects" />
+				</methods>
+			</class>
+
+			<class
+					name="am.qa.picsart.test.editingtools.ChangeBackgroundTest">
+				<methods>
+					<include name="testChangeBackground" />
 				</methods>
 			</class>
 

@@ -5,11 +5,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import am.qa.picsart.pages.artists.PicsArtArtistsPage;
+import am.qa.picsart.pages.artists.ArtistsPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 
-public class PicsArtFollowedArtistTest extends PicsArtBaseTest{
+public class FollowedArtistTest extends PicsArtBaseTest{
 	
 	@Test 
 	public void testFollowedArtistIsDisplayed() throws InterruptedException {
@@ -32,7 +32,7 @@ public class PicsArtFollowedArtistTest extends PicsArtBaseTest{
 		userPage.artistsLink.click();
 		
 		//20.3.Click on the prefered artist username
-		PicsArtArtistsPage artistPage = new PicsArtArtistsPage(driver);
+		ArtistsPage artistPage = new ArtistsPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(artistPage.animeUserLink));
 		artistPage.animeUserLink.click();
 		

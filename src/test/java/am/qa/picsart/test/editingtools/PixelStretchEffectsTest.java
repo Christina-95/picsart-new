@@ -1,8 +1,8 @@
 package am.qa.picsart.test.editingtools;
 
-import am.qa.picsart.pages.editingtools.PicsArtEditingToolsPage;
-import am.qa.picsart.pages.editingtools.PicsArtPixelStretchEffectsPage;
-import am.qa.picsart.pages.editingtools.PicsArtUploadSelectImagePage;
+import am.qa.picsart.pages.editingtools.EditingToolsPage;
+import am.qa.picsart.pages.editingtools.PixelStretchEffectsPage;
+import am.qa.picsart.pages.editingtools.UploadSelectImagePage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,17 +27,17 @@ public class PixelStretchEffectsTest extends PicsArtBaseTest {
         userPage.startEditingButton.click();
 
         //29.1.Click on the "Pixel Stretch Effect"
-        PicsArtEditingToolsPage editingToolsPage = new PicsArtEditingToolsPage(driver);
+        EditingToolsPage editingToolsPage = new EditingToolsPage(driver);
         wait.until(ExpectedConditions.elementToBeClickable(editingToolsPage.pixelStretchEffects));
         editingToolsPage.pixelStretchEffects.click();
 
         //29.2.Choose on of the random images
-        PicsArtUploadSelectImagePage uploadImage = new PicsArtUploadSelectImagePage(driver);
+        UploadSelectImagePage uploadImage = new UploadSelectImagePage(driver);
         wait.until(ExpectedConditions.elementToBeClickable(uploadImage.randomImage));
         uploadImage.randomImage.click();
 
         //validate that the "Stretch" category, and "Share" , "Download"  options are  displayed
-        PicsArtPixelStretchEffectsPage pixelStretchEffectsPage = new PicsArtPixelStretchEffectsPage(driver);
+        PixelStretchEffectsPage pixelStretchEffectsPage = new PixelStretchEffectsPage(driver);
         wait.until(ExpectedConditions.visibilityOf(pixelStretchEffectsPage.stretchCategory));
         Assert.assertTrue(pixelStretchEffectsPage.stretchCategory.isDisplayed());
         wait.until(ExpectedConditions.visibilityOf(pixelStretchEffectsPage.shareOption));
@@ -64,17 +64,17 @@ public class PixelStretchEffectsTest extends PicsArtBaseTest {
         userPage.startEditingButton.click();
 
         //30.1.Click on the "Pixel Stretch Effect"
-        PicsArtEditingToolsPage editingToolsPage = new PicsArtEditingToolsPage(driver);
+        EditingToolsPage editingToolsPage = new EditingToolsPage(driver);
         wait.until(ExpectedConditions.elementToBeClickable(editingToolsPage.pixelStretchEffects));
         editingToolsPage.pixelStretchEffects.click();
 
         //30.2.Choose on of the random images
-        PicsArtUploadSelectImagePage uploadImage = new PicsArtUploadSelectImagePage(driver);
+        UploadSelectImagePage uploadImage = new UploadSelectImagePage(driver);
         wait.until(ExpectedConditions.elementToBeClickable(uploadImage.randomImage));
         uploadImage.randomImage.click();
 
         //30.3.Choose one of the image edits
-        PicsArtPixelStretchEffectsPage pixelStretchEffectsPage = new PicsArtPixelStretchEffectsPage(driver);
+        PixelStretchEffectsPage pixelStretchEffectsPage = new PixelStretchEffectsPage(driver);
         wait.until(ExpectedConditions.elementToBeClickable(pixelStretchEffectsPage.stretchFilter1));
         pixelStretchEffectsPage.stretchFilter1.click();
 

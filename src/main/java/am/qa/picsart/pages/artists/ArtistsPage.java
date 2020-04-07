@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 
 import am.qa.picsart.pages.base.PicsArtBasePage;
 
-public class PicsArtArtistsPage extends PicsArtBasePage {
+public class ArtistsPage extends PicsArtBasePage {
 
-	public PicsArtArtistsPage(WebDriver driver) {
+	public ArtistsPage(WebDriver driver) {
 		super(driver);
 	}
 	

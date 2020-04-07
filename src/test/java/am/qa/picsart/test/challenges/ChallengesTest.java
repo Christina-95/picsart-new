@@ -1,6 +1,6 @@
 package am.qa.picsart.test.challenges;
 
-import am.qa.picsart.pages.challenges.PicsArtChallengesPage;
+import am.qa.picsart.pages.challenges.ChallengesPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -31,7 +31,7 @@ public class ChallengesTest extends PicsArtBaseTest {
         //validate that the "Freestyle Challenges", "Collage Challenges", "Image Remix Challenges",
         //"Editing Challenges", "Sticker Challenges", "Photography Challenges",
         //"Sticker Remix Challenges" and "Drawing Challenges" and "See more" button are displayed
-        PicsArtChallengesPage challengesPage = new PicsArtChallengesPage(driver);
+        ChallengesPage challengesPage = new ChallengesPage(driver);
         wait.until(ExpectedConditions.visibilityOf(challengesPage.freeStyleChallengesLink));
         Assert.assertTrue(challengesPage.freeStyleChallengesLink.isDisplayed());
         wait.until(ExpectedConditions.visibilityOf(challengesPage.collageChallengesLink));

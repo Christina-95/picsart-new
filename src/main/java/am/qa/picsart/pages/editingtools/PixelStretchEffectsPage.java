@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PicsArtPixelStretchEffectsPage extends PicsArtBasePage {
+public class PixelStretchEffectsPage extends PicsArtBasePage {
 
-    public PicsArtPixelStretchEffectsPage(WebDriver driver) {
+    public PixelStretchEffectsPage(WebDriver driver) {
         super(driver);
     }
 

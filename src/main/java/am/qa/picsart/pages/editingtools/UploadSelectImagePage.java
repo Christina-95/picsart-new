@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 
 import am.qa.picsart.pages.base.PicsArtBasePage;
 
-public class PicsArtUploadSelectImagePage  extends PicsArtBasePage {
+public class UploadSelectImagePage extends PicsArtBasePage {
 
-	public PicsArtUploadSelectImagePage(WebDriver driver) {
+	public UploadSelectImagePage(WebDriver driver) {
 		super(driver);
 	}
 	

@@ -1,6 +1,6 @@
 package am.qa.picsart.test.presscenter;
 
-import am.qa.picsart.pages.presscenter.PicsArtPressCenterPage;
+import am.qa.picsart.pages.presscenter.PressCenterPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,7 +29,7 @@ public class PressCenterTest extends PicsArtBaseTest {
         userPage.pressCenterLink.click();
 
         //validate that the "PRESS CENTER" page is displayed
-        PicsArtPressCenterPage pressCenterPage = new PicsArtPressCenterPage(driver);
+        PressCenterPage pressCenterPage = new PressCenterPage(driver);
         wait.until(ExpectedConditions.visibilityOf(pressCenterPage.pressCenterTitle));
         Assert.assertTrue(pressCenterPage.pressCenterTitle.isDisplayed());
 

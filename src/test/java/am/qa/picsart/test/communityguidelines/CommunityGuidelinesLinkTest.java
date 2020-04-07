@@ -1,7 +1,7 @@
 package am.qa.picsart.test.communityguidelines;
 
-import am.qa.picsart.pages.communityguidelines.PicsArtCommunityGuidelinesPage;
-import am.qa.picsart.pages.disputepolicy.PicsArtCopyrightDisputePolicyPage;
+import am.qa.picsart.pages.communityguidelines.CommunityGuidelinesPage;
+import am.qa.picsart.pages.disputepolicy.CopyrightDisputePolicyPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,7 +26,7 @@ public class CommunityGuidelinesLinkTest extends PicsArtBaseTest {
         userPage.communityGuidelinesLink.click();
 
         //validate that the Community Guidelines" page is displayed
-        PicsArtCommunityGuidelinesPage communityGuidelinesPage = new PicsArtCommunityGuidelinesPage(driver);
+        CommunityGuidelinesPage communityGuidelinesPage = new CommunityGuidelinesPage(driver);
         wait.until(ExpectedConditions.visibilityOf(communityGuidelinesPage.communityGuidelinesTitle));
         Assert.assertTrue(communityGuidelinesPage.communityGuidelinesTitle.isDisplayed());
 
@@ -36,7 +36,7 @@ public class CommunityGuidelinesLinkTest extends PicsArtBaseTest {
 
         //validate that the "COPYRIGHT DISPUTE POLICY" page is displayed
         driver.get("https://picsart.com/copyright-dispute-policy");
-        PicsArtCopyrightDisputePolicyPage copyrightDisputePolicyPage = new PicsArtCopyrightDisputePolicyPage(driver);
+        CopyrightDisputePolicyPage copyrightDisputePolicyPage = new CopyrightDisputePolicyPage(driver);
         wait.until(ExpectedConditions.visibilityOf(copyrightDisputePolicyPage.copirightDisputePolicyTitle));
         Assert.assertTrue(copyrightDisputePolicyPage.copirightDisputePolicyTitle.isDisplayed());
     }

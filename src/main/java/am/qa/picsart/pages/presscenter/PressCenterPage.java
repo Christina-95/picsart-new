@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PicsArtPressCenterPage extends PicsArtBasePage {
-    public PicsArtPressCenterPage(WebDriver driver) {
+public class PressCenterPage extends PicsArtBasePage {
+    public PressCenterPage(WebDriver driver) {
         super(driver);
     }
 

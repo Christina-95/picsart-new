@@ -6,11 +6,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import am.qa.picsart.pages.base.PicsArtBasePage;
-import am.qa.picsart.pages.login.PicsArtLoginPage;
+import am.qa.picsart.pages.login.LoginPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 
-public class PicsArtChangePasswordTests extends PicsArtBaseTest {
+public class ChangePasswordTests extends PicsArtBaseTest {
 	
 	@Test 
 	public void testChangePassword () {
@@ -62,7 +62,7 @@ public class PicsArtChangePasswordTests extends PicsArtBaseTest {
         page.clickOnLoginButton();
         
         //4.8.Fill in the "Username" field with correct username 
-        PicsArtLoginPage loginPage = new PicsArtLoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.usernameOrEmailField.click();
         loginPage.usernameOrEmailField.sendKeys("tinat6043@gmail.com");
        

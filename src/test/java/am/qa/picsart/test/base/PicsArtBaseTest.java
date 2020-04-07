@@ -13,7 +13,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import am.qa.picsart.pages.base.PicsArtBasePage;
-import am.qa.picsart.pages.login.PicsArtLoginPage;
+import am.qa.picsart.pages.login.LoginPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 
 
@@ -46,7 +46,7 @@ public class PicsArtBaseTest {
 	page.loginButton.click();
 	
 	//Fill in the username and password fields
-	PicsArtLoginPage loginPage = new PicsArtLoginPage(driver);
+	LoginPage loginPage = new LoginPage(driver);
 	wait.until(ExpectedConditions.visibilityOf(loginPage.usernameOrEmailField));
 	loginPage.usernameOrEmailField.click();
 	loginPage.usernameOrEmailField.sendKeys("XXX@gmail.com");

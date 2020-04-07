@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 
 import am.qa.picsart.pages.base.PicsArtBasePage;
 
-public class PicsArtLoginPage extends PicsArtBasePage {
+public class LoginPage extends PicsArtBasePage {
 
-	public PicsArtLoginPage(WebDriver driver) {
+	public LoginPage(WebDriver driver) {
 		super(driver);
 	}
 	

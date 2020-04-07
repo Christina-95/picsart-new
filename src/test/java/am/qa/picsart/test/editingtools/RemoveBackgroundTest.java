@@ -1,8 +1,8 @@
 package am.qa.picsart.test.editingtools;
 
-import am.qa.picsart.pages.editingtools.PicsArtEditingToolsPage;
-import am.qa.picsart.pages.editingtools.PicsArtRemoveBackgroundEditingPage;
-import am.qa.picsart.pages.editingtools.PicsArtUploadSelectImagePage;
+import am.qa.picsart.pages.editingtools.EditingToolsPage;
+import am.qa.picsart.pages.editingtools.RemoveBackgroundEditingPage;
+import am.qa.picsart.pages.editingtools.UploadSelectImagePage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,17 +28,17 @@ public class RemoveBackgroundTest extends PicsArtBaseTest {
         userPage.startEditingButton.click();
 
         //6.2.Select the "Remove Background" filter
-        PicsArtEditingToolsPage toolsPage = new PicsArtEditingToolsPage(driver);
+        EditingToolsPage toolsPage = new EditingToolsPage(driver);
         wait.until(ExpectedConditions.visibilityOf(toolsPage.removeBackgroundFilter));
         toolsPage.removeBackgroundFilter.click();
 
         //6.3.Select one of the suggested images
-        PicsArtUploadSelectImagePage uploadImage = new PicsArtUploadSelectImagePage(driver);
+        UploadSelectImagePage uploadImage = new UploadSelectImagePage(driver);
         wait.until(ExpectedConditions.visibilityOf(uploadImage.randomImage));
         uploadImage.randomImage.click();
 
         //6.4.Click the "Share" button
-        PicsArtRemoveBackgroundEditingPage removeBackgroundPage = new PicsArtRemoveBackgroundEditingPage(driver);
+        RemoveBackgroundEditingPage removeBackgroundPage = new RemoveBackgroundEditingPage(driver);
         wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.shareButton));
         removeBackgroundPage.shareButton.click();
 
@@ -73,17 +73,17 @@ public class RemoveBackgroundTest extends PicsArtBaseTest {
         userPage.startEditingButton.click();
 
         //7.2.Select the "Remove Background" filter
-        PicsArtEditingToolsPage toolsPage = new PicsArtEditingToolsPage(driver);
+        EditingToolsPage toolsPage = new EditingToolsPage(driver);
         wait.until(ExpectedConditions.visibilityOf(toolsPage.removeBackgroundFilter));
         toolsPage.removeBackgroundFilter.click();
 
         //7.3.Select one of the suggested images
-        PicsArtUploadSelectImagePage uploadImage = new PicsArtUploadSelectImagePage(driver);
+        UploadSelectImagePage uploadImage = new UploadSelectImagePage(driver);
         wait.until(ExpectedConditions.visibilityOf(uploadImage.randomImage));
         uploadImage.randomImage.click();
 
         //7.4.Click the "Share" button
-        PicsArtRemoveBackgroundEditingPage removeBackgroundPage = new PicsArtRemoveBackgroundEditingPage(driver);
+        RemoveBackgroundEditingPage removeBackgroundPage = new RemoveBackgroundEditingPage(driver);
         wait.until(ExpectedConditions.visibilityOf(removeBackgroundPage.shareButton));
         removeBackgroundPage.shareButton.click();
 

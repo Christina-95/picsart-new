@@ -5,11 +5,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import am.qa.picsart.pages.gettheapp.PicsArtGetTheAppPage;
+import am.qa.picsart.pages.gettheapp.GetTheAppPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 
-public class PicsArtAppsLinkTest extends PicsArtBaseTest{
+public class AppsLinkTest extends PicsArtBaseTest{
 	
 	@Test 
 	public void testAppsLink() {
@@ -31,7 +31,7 @@ public class PicsArtAppsLinkTest extends PicsArtBaseTest{
 		userPage.appsLink.click();
 		
 		//17.3.Click on the "Get It Now" button
-		PicsArtGetTheAppPage getTheAppPage = new PicsArtGetTheAppPage(driver);
+		GetTheAppPage getTheAppPage = new GetTheAppPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(getTheAppPage.getItNowButton));
 		getTheAppPage.getItNowButton.click();
 		

@@ -1,11 +1,9 @@
 package am.qa.picsart.test.blog;
 
-import am.qa.picsart.pages.blog.PicsArtBlogPage;
+import am.qa.picsart.pages.blog.BlogPage;
 import am.qa.picsart.pages.blog.PicsArtJapanPage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
-import com.sun.pisces.PiscesRenderer;
-import net.bytebuddy.build.ToStringPlugin;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -28,7 +26,7 @@ public class PicsArtJapanTest extends PicsArtBaseTest {
         userPage.blogLink.click();
 
         //27.2.Scroll down the page and click on the "PicsArt Japan" link in the "Categories" section
-        PicsArtBlogPage blogPage = new PicsArtBlogPage(driver);
+        BlogPage blogPage = new BlogPage(driver);
         wait.until(ExpectedConditions.elementToBeClickable(blogPage.picsartJapanLink));
         blogPage.picsartJapanLink.click();
 

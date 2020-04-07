@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 
 import am.qa.picsart.pages.base.PicsArtBasePage;
 
-public class PicsArtEditingToolsPage extends PicsArtBasePage {
+public class EditingToolsPage extends PicsArtBasePage {
 
-	public PicsArtEditingToolsPage(WebDriver driver) {
+	public EditingToolsPage(WebDriver driver) {
 		super(driver);
 	}
 	
@@ -17,6 +17,7 @@ public class PicsArtEditingToolsPage extends PicsArtBasePage {
 	protected final String REMOVE_BACKGROUND = "//h4[contains(text(),'Remove Background')]";
 	protected final String TEMPLATE_EDITOR = "//img[@alt='Template Editor']";
 	protected final String PIXEL_STRETCH_EFFECTS = "//img[@alt='Stretch Effect']";
+	protected final String CHANGE_BACKGROUND = "//img[@alt='Change Background']";
 	
 	
 	
@@ -31,5 +32,8 @@ public class PicsArtEditingToolsPage extends PicsArtBasePage {
 
 	@FindBy (xpath = PIXEL_STRETCH_EFFECTS)
 	public WebElement pixelStretchEffects;
+
+	@FindBy (xpath = CHANGE_BACKGROUND)
+	public WebElement changeBackground;
 
 }

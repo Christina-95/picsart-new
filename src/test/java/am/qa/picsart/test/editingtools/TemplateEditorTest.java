@@ -1,8 +1,8 @@
 package am.qa.picsart.test.editingtools;
 
-import am.qa.picsart.pages.editingtools.PicsArtEditingToolsPage;
-import am.qa.picsart.pages.editingtools.PicsArtTemplateEditorPage;
-import am.qa.picsart.pages.editingtools.PicsArtUploadSelectImagePage;
+import am.qa.picsart.pages.editingtools.EditingToolsPage;
+import am.qa.picsart.pages.editingtools.TemplateEditorPage;
+import am.qa.picsart.pages.editingtools.UploadSelectImagePage;
 import am.qa.picsart.pages.user.PicsArtUserPage;
 import am.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,17 +28,17 @@ public class TemplateEditorTest extends PicsArtBaseTest {
         userPage.startEditingButton.click();
 
         //28.1.Click on the "Template Editor"
-        PicsArtEditingToolsPage editingToolsPage = new PicsArtEditingToolsPage(driver);
+        EditingToolsPage editingToolsPage = new EditingToolsPage(driver);
         wait.until(ExpectedConditions.elementToBeClickable(editingToolsPage.templateEditor));
         editingToolsPage.templateEditor.click();
 
         //28.2.Choose one of the images
-        PicsArtUploadSelectImagePage uploadImage = new PicsArtUploadSelectImagePage(driver);
+        UploadSelectImagePage uploadImage = new UploadSelectImagePage(driver);
         wait.until(ExpectedConditions.elementToBeClickable(uploadImage.randomImage));
         uploadImage.randomImage.click();
 
         //validate that the "Templates", "Photo", "Stickers", "Text", "Shape" and "Overlays" categories are displayed
-        PicsArtTemplateEditorPage templateEditorPage = new PicsArtTemplateEditorPage(driver);
+        TemplateEditorPage templateEditorPage = new TemplateEditorPage(driver);
         wait.until(ExpectedConditions.visibilityOf(templateEditorPage.templateCategory));
         Assert.assertTrue(templateEditorPage.templateCategory.isDisplayed());
         wait.until(ExpectedConditions.visibilityOf(templateEditorPage.photosCategory));
