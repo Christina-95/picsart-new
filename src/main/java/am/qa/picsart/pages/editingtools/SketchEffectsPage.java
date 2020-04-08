@@ -10,16 +10,13 @@ public class SketchEffectsPage extends PicsArtBasePage {
         super(driver);
     }
 
-    protected final String EFFECTS_CATEGORY = "//div[@id='effects-category']";
-    protected final String NONE_OPTION = "//div[@class='itemActive-0-2-179']";
-    protected final String SKETCH1_OPTION = "(//img[@alt='img'])[2]";
-    protected final String SKETCH2_OPTION = "(//img[@alt='img'])[3]";
-    protected final String SKETCH3_OPTION = "(//img[@alt='img'])[4]";
-    protected final String SKETCH4_OPTION = "(//img[@alt='img'])[5]";
 
+    protected final String NONE_OPTION = "//*[text()='NONE']";
+    protected final String SKETCH1_OPTION = "//*[text()='Sketch1']";
+    protected final String SKETCH2_OPTION = "//*[text()='Sketch2']";
+    protected final String SKETCH3_OPTION = "//*[text()='Sketch3']";
+    protected final String SKETCH4_OPTION = "//*[text()='Sketch4']";
 
-    @FindBy (xpath = EFFECTS_CATEGORY)
-    public WebElement effectsCategory;
 
     @FindBy (xpath = NONE_OPTION)
     public WebElement noneOption;

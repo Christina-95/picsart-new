@@ -167,6 +167,13 @@
 				</methods>
 			</class>
 
+			<class
+					name="am.qa.picsart.test.editingtools.LightEffectsTest">
+				<methods>
+					<include name="testLightEffects" />
+				</methods>
+			</class>
+
 		</classes>
 	</test>
 </suite>
