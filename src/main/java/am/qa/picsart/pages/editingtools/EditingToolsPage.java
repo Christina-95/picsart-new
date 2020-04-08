@@ -15,13 +15,13 @@ public class EditingToolsPage extends PicsArtBasePage {
 	
 	protected final String EDITING_TOOLS_PAGE_TITLE = "//h1[@class='editing-tools-title']";
 	protected final String REMOVE_BACKGROUND = "//h4[contains(text(),'Remove Background')]";
-	protected final String TEMPLATE_EDITOR = "//img[@alt='Template Editor']";
-	protected final String PIXEL_STRETCH_EFFECTS = "//img[@alt='Stretch Effect']";
-	protected final String CHANGE_BACKGROUND = "//img[@alt='Change Background']";
-	protected final String ADD_STICKER = "//img[@alt='Add Sticker']";
-	protected final String SKETCH_EFFECTS = "//img[@alt='Sketch Effects']";
-	protected final String LIGHT_EFFECTS = "//img[@alt='Light Effects']";
-	
+	protected final String TEMPLATE_EDITOR = "//*[text()='Template Editor']";
+	protected final String PIXEL_STRETCH_EFFECTS = "//*[text()='Pixel Stretch Effect']";
+	protected final String CHANGE_BACKGROUND = "//*[text()='Change Background']";
+	protected final String ADD_STICKER = "//*[text()='Add Sticker']";
+	protected final String SKETCH_EFFECTS = "//*[text()='Sketch Effects']";
+	protected final String LIGHT_EFFECTS = "//*[text()='Light Effects']";
+	protected final String DOUBLE_EXPOSURE = "//div[@class='bottom']//*[text()='Double Exposure']";
 	
 	
 	@FindBy (xpath = EDITING_TOOLS_PAGE_TITLE)
@@ -47,5 +47,8 @@ public class EditingToolsPage extends PicsArtBasePage {
 
 	@FindBy (xpath = LIGHT_EFFECTS)
 	public WebElement lightEffects;
+
+	@FindBy (xpath = DOUBLE_EXPOSURE)
+	public WebElement doubleExposure;
 
 }
