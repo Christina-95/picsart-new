@@ -36,10 +36,10 @@ public class PicsArtBaseTest {
 	
 	PicsArtBasePage page = new PicsArtBasePage(driver);
 	WebDriverWait wait = new WebDriverWait(driver, 30);
-	wait.until(ExpectedConditions.visibilityOf(page.closePopUp));
-	page.moveToClosePopUp();
-	//close the Pop-up
-	page.closePopUp.click();
+//	wait.until(ExpectedConditions.visibilityOf(page.closePopUp));
+//	page.moveToClosePopUp();
+//	//close the Pop-up
+//	page.closePopUp.click();
 	
 	//click on the "Log In" button
 	wait.until(ExpectedConditions.visibilityOf(page.loginButton));

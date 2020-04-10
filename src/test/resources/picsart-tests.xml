@@ -180,6 +180,14 @@
 					<include name="testDoubleExposure" />
 				</methods>
 			</class>
+
+			<class
+					name="am.qa.picsart.test.editingtools.PhotoOverlaysTest">
+				<methods>
+					<include name="testPhotoOverlays" />
+				</methods>
+			</class>
+
 		</classes>
 	</test>
 </suite>

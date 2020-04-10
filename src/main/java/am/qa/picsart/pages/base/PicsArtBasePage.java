@@ -14,9 +14,9 @@ import am.qa.picsart.pages.login.LoginPage;
 public class PicsArtBasePage {
 	
 	protected static final String CLOSE_POP_UP = "//div[@class='modal-close js-close-button']";
-	protected final String LOGIN_BUTTON_XPATH = "//a[@data-js-ga-click='sign-in']";
+	protected final String LOGIN_BUTTON = "//a[@data-js-ga-click='sign-in']";
 	
-	@FindBy (xpath = LOGIN_BUTTON_XPATH)
+	@FindBy (xpath = LOGIN_BUTTON)
 	public WebElement loginButton;
 	
 	@FindBy (xpath = CLOSE_POP_UP)

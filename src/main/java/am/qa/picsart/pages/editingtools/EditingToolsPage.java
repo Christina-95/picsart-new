@@ -22,6 +22,7 @@ public class EditingToolsPage extends PicsArtBasePage {
 	protected final String SKETCH_EFFECTS = "//*[text()='Sketch Effects']";
 	protected final String LIGHT_EFFECTS = "//*[text()='Light Effects']";
 	protected final String DOUBLE_EXPOSURE = "//div[@class='bottom']//*[text()='Double Exposure']";
+	protected final String PHOTO_OVERLAYS = "//div[@class='bottom']//*[text()='Photo Overlays']";
 	
 	
 	@FindBy (xpath = EDITING_TOOLS_PAGE_TITLE)
@@ -50,5 +51,8 @@ public class EditingToolsPage extends PicsArtBasePage {
 
 	@FindBy (xpath = DOUBLE_EXPOSURE)
 	public WebElement doubleExposure;
+
+	@FindBy (xpath = PHOTO_OVERLAYS)
+	public WebElement photoOverlays;
 
 }
