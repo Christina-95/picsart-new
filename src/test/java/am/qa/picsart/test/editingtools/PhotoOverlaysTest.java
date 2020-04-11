@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
 public class PhotoOverlaysTest extends PicsArtBaseTest {
 
     @Test
@@ -48,14 +49,15 @@ public class PhotoOverlaysTest extends PicsArtBaseTest {
         for (int i = 0; i < photoOverlaysPage.moreOptions.size(); i++) {
             if(i < 4) {
                 photoOverlaysPage.clickOnTheMoreOption(i+1);
-                System.out.println(i+".");
             }
             else {
                 JavascriptExecutor js = (JavascriptExecutor) driver;
                 js.executeScript("javascript:window.scrollBy(250,350)");
                 photoOverlaysPage.clickOnTheMoreOption(i+1);
-                System.out.println(i+".");
             }
+            //validate that when the More option is clicked then the "Back" option is displayed
+            wait.until(ExpectedConditions.visibilityOf(photoOverlaysPage.backOption));
+            Assert.assertTrue(photoOverlaysPage.backOption.isDisplayed());
         }
     }
 }
