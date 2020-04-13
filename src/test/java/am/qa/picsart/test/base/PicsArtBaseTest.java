@@ -49,7 +49,7 @@ public class PicsArtBaseTest {
 	LoginPage loginPage = new LoginPage(driver);
 	wait.until(ExpectedConditions.visibilityOf(loginPage.usernameOrEmailField));
 	loginPage.usernameOrEmailField.click();
-	loginPage.usernameOrEmailField.sendKeys("XXX@gmail.com");
+	loginPage.usernameOrEmailField.sendKeys("tinat6043@gmail.com");
 	wait.until(ExpectedConditions.visibilityOf(loginPage.passwordField));
 	loginPage.passwordField.click();
 	loginPage.passwordField.sendKeys("12345678");

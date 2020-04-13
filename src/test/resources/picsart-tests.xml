@@ -188,6 +188,13 @@
 				</methods>
 			</class>
 
+			<class
+					name="am.qa.picsart.test.editingtools.TextEditorTest">
+				<methods>
+					<include name="testTextEditor" />
+				</methods>
+			</class>
+
 		</classes>
 	</test>
 </suite>

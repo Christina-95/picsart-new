@@ -14,12 +14,14 @@ public class UploadSelectImagePage extends PicsArtBasePage {
 	
 	PicsArtBasePage wait = new PicsArtBasePage(driver);
 	
-	public static final String RANDOM_IMAGE = "(//img[@alt='img'])[1]";
+	public final String RANDOM_IMAGE = "(//img[@alt='img'])[1]";
+	public final String UPLOAD_YOUR_IMAGE_OPTION = "//i[@class='icon-upload addPhotoIcon-0-2-39']";
 	
 	
 	@FindBy (xpath = RANDOM_IMAGE)
 	public WebElement randomImage;
-	
 
+	@FindBy (xpath = UPLOAD_YOUR_IMAGE_OPTION)
+	public WebElement uploadYourImageOption;
 	
 }

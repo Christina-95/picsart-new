@@ -55,6 +55,7 @@ public class PhotoOverlaysTest extends PicsArtBaseTest {
                 js.executeScript("javascript:window.scrollBy(250,350)");
                 photoOverlaysPage.clickOnTheMoreOption(i+1);
             }
+
             //validate that when the More option is clicked then the "Back" option is displayed
             wait.until(ExpectedConditions.visibilityOf(photoOverlaysPage.backOption));
             Assert.assertTrue(photoOverlaysPage.backOption.isDisplayed());
