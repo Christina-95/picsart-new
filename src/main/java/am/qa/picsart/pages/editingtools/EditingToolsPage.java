@@ -24,7 +24,7 @@ public class EditingToolsPage extends PicsArtBasePage {
 	protected final String DOUBLE_EXPOSURE = "//div[@class='bottom']//*[text()='Double Exposure']";
 	protected final String PHOTO_OVERLAYS = "//div[@class='bottom']//*[text()='Photo Overlays']";
 	protected final String TEXT_EDITOR = "//div[@class='bottom']//*[text()='Text Editor']";
-	
+	protected final String MEME_GENERATOR = "//h4[contains(text(),'Meme Generator')]";
 	
 	@FindBy (xpath = EDITING_TOOLS_PAGE_TITLE)
 	public WebElement editingToolsPageTitle;
@@ -58,5 +58,8 @@ public class EditingToolsPage extends PicsArtBasePage {
 
 	@FindBy (xpath = TEXT_EDITOR)
 	public WebElement textEditor;
+
+	@FindBy (xpath = MEME_GENERATOR)
+	public WebElement memeGenerator;
 
 }

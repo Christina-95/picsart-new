@@ -14,7 +14,7 @@ public class LoginPage extends PicsArtBasePage {
 	
 	protected final String USERNAME_OR_EMAIL_FIELD = "//input[@id='username']";
 	protected final String PASSWORD_FIELD = "//input[@id='password']";
-	protected final String SIGN_IN_BUTTON = "//div[@type='submit']";
+	protected final String SIGN_IN_BUTTON = "//div[@type='submit'][text()='Sign in']";
 	protected final String ERROR_MESSAGE = "//span[contains(text(),'Connection error')]";
 	
 	

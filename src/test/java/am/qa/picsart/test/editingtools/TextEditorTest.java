@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Collections;
+
 public class TextEditorTest extends PicsArtBaseTest {
 
     @Test
@@ -54,23 +56,18 @@ public class TextEditorTest extends PicsArtBaseTest {
         Assert.assertTrue(textEditorPage.AddTextDropDownList.size() <= 3);
         System.out.println(textEditorPage.AddTextDropDownList.size());
 
-        for (int i = 1; i <=3; i++) {
-            if (i < 1) {
-                wait.until(ExpectedConditions.visibilityOf(textEditorPage.firstElement));
-                String first = textEditorPage.firstElement.getText();
-                //System.out.println(first);
+        for (int i = 1; i <= textEditorPage.AddTextDropDownList.size(); i++) {
+            if (i < 2) {
+                String first = textEditorPage.addTextDropDownList(i);
                 Assert.assertEquals(first, "Add a heading");
 
-            } else if (i < 2) {
-                wait.until(ExpectedConditions.visibilityOf(textEditorPage.secondElement));
-              String second = textEditorPage.secondElement.getText();
-                //System.out.println(second);
+            } else if (i < 3) {
+                String second = textEditorPage.addTextDropDownList(i+1);
                 Assert.assertEquals(second, "Add a subheading");
 
-            } else {
-                wait.until(ExpectedConditions.visibilityOf(textEditorPage.thirdElement));
-               String third = textEditorPage.thirdElement.getText();
-                //System.out.println(third);
+            }
+            else {
+              String third = textEditorPage.addTextDropDownList(i+2);
                 Assert.assertEquals(third, "Add a body text");
 
             }

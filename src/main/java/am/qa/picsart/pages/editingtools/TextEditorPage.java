@@ -19,9 +19,6 @@ public class TextEditorPage extends PicsArtBasePage {
     protected final String TEXT_CATEGORY = "//*[text()='Text']";
     protected final String CLICK_TO_ADD_TEXT_OPTION = "//*[text()='Click to add text']";
     protected final String ADD_TEXT_DROP_DOWN_LIST = "(//div[@class='addCustomText-0-2-175'])/*";
-    protected final String FIRST_ELEMENT = "(//div[@class='addCustomText-0-2-175'])/*[1]";
-    protected final String SECOND_ELEMENT = "(//div[@class='addCustomText-0-2-175'])/*[2]";
-    protected final String THIRD_ELEMENT = "(//div[@class='addCustomText-0-2-175'])/*[3]";
 
 
     @FindBy(xpath = TEXT_CATEGORY)
@@ -33,14 +30,9 @@ public class TextEditorPage extends PicsArtBasePage {
     @FindBy(xpath = ADD_TEXT_DROP_DOWN_LIST)
     public List<WebElement> AddTextDropDownList;
 
-    @FindBy(xpath = FIRST_ELEMENT)
-    public WebElement firstElement;
-
-    @FindBy(xpath = SECOND_ELEMENT)
-    public WebElement secondElement;
-
-    @FindBy(xpath = THIRD_ELEMENT)
-    public WebElement thirdElement;
-
+    public String addTextDropDownList(int index) {
+       String text = driver.findElement(By.xpath("(//div[@class='addCustomText-0-2-175'])/*["+index+"]")).getText();
+       return text;
+    }
 
 }
