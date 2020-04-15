@@ -62,6 +62,5 @@ public class MemeGeneratorPage extends PicsArtBasePage {
         String text = driver.findElement(By.xpath("//div[@class='settingNameOutput-0-2-198']["+index+"]")).getText();
         return text;
     }
-//input[@class='currentInputRange-0-2-190']["+index+"]
+
 }
-//div[@class='settingNameOutput-0-2-198']["+index+"]
