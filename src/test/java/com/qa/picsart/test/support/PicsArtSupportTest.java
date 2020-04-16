@@ -3,6 +3,7 @@ package com.qa.picsart.test.support;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.qa.picsart.pages.support.PicsArtSupportPage;
@@ -10,6 +11,17 @@ import com.qa.picsart.pages.user.PicsArtUserPage;
 import com.qa.picsart.test.base.PicsArtBaseTest;
 
 public class PicsArtSupportTest extends PicsArtBaseTest{
+	private PicsArtUserPage userPage;
+	private WebDriverWait wait;
+	private PicsArtSupportPage supportPage;
+
+
+	@BeforeClass
+	public void start() {
+		userPage = new PicsArtUserPage(driver);
+		wait = new WebDriverWait(driver, 30);
+		supportPage = new PicsArtSupportPage(driver);
+	}
 	
 	@Test
 	public void testSupportPageLanguage() throws InterruptedException {
@@ -21,13 +33,10 @@ public class PicsArtSupportTest extends PicsArtBaseTest{
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//12.1.Click on the "Support" link
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(userPage.supportLink));
 		userPage.clickOnSupportLink();
 		
 		//12.2.Click on "English" link
-		PicsArtSupportPage supportPage = new PicsArtSupportPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(supportPage.englishLink));
 		supportPage.clickOnEnglishLink();
 		

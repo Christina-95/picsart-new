@@ -3,13 +3,15 @@ package com.qa.picsart.test.store;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.qa.picsart.pages.user.PicsArtUserPage;
 import com.qa.picsart.test.base.PicsArtBaseTest;
 
 public class PicsArtStoreTest extends PicsArtBaseTest{
-	
+
+
 	@Test
 	public void testPicsArtStoreLink() {
 		//Tets Case ID:11
