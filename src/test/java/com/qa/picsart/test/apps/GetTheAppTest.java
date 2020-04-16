@@ -4,11 +4,22 @@ import com.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.qa.picsart.pages.user.PicsArtUserPage;
 
 public class GetTheAppTest extends PicsArtBaseTest {
+
+	private PicsArtUserPage userPage;
+	private WebDriverWait wait;
+
+	@BeforeClass
+	public void start() {
+		userPage = new PicsArtUserPage(driver);
+		wait = new WebDriverWait(driver, 30);
+	}
+
 	
 	@Test 
 	public void testGetTheAppButton() {
@@ -19,8 +30,6 @@ public class GetTheAppTest extends PicsArtBaseTest {
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//13.1.Click on the "Get the app" button
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(userPage.getTheAppButton));
 		userPage.getTheAppButton.click();
 		
