@@ -4,12 +4,23 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.qa.picsart.pages.user.PicsArtUserPage;
 import com.qa.picsart.test.base.PicsArtBaseTest;
 
 public class PicksImagesOptionsTest extends PicsArtBaseTest{
+	private PicsArtUserPage userPage;
+	private WebDriverWait wait;
+	private Actions actions;
+
+	@BeforeClass
+	public void start() {
+		userPage = new PicsArtUserPage(driver);
+		wait = new WebDriverWait(driver, 30);
+		actions= new Actions(driver);
+	}
 	
 	@Test 
 	public void testPicksImagesOptions() {
@@ -24,8 +35,6 @@ public class PicksImagesOptionsTest extends PicsArtBaseTest{
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//15.1.Click on the "Explore" link
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(userPage.exploreLink));
 		userPage.exploreLink.click();
 		
@@ -38,7 +47,6 @@ public class PicksImagesOptionsTest extends PicsArtBaseTest{
 		userPage.picksImage.click();
 		
 		//15.4.Move the mouse to the drop-down
-		Actions actions= new Actions(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(userPage.dropDown));
 		actions.moveToElement(userPage.dropDown).build().perform();
 		

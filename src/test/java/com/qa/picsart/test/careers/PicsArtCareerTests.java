@@ -4,6 +4,7 @@ package com.qa.picsart.test.careers;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
@@ -13,7 +14,19 @@ import com.qa.picsart.pages.user.PicsArtUserPage;
 import com.qa.picsart.test.base.PicsArtBaseTest;
 
 public class PicsArtCareerTests extends PicsArtBaseTest {
-	//private WebDriverWait wait = new WebDriverWait(driver, 30);
+	private WebDriverWait wait;
+	private PicsArtUserPage userPage;
+	private PicsArtJobsPage jobsPage;
+	private PicsArtVacanciesPage vacanciesPage;
+
+
+	@BeforeClass
+	public void start() {
+		wait = new WebDriverWait(driver, 30);
+		userPage = new PicsArtUserPage(driver);
+		jobsPage = new PicsArtJobsPage(driver);
+		vacanciesPage = new PicsArtVacanciesPage(driver);
+	}
 	
 	
 	@Test
@@ -26,13 +39,10 @@ public class PicsArtCareerTests extends PicsArtBaseTest {
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//1.1:Click on "Careers" link
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(userPage.careersLink));
 		userPage.careersLink.click();
 		
 		//1.2:Click the "View Jobs" button
-		PicsArtJobsPage jobsPage = new PicsArtJobsPage(driver);
 		wait.until(ExpectedConditions.visibilityOf(jobsPage.viewJobsButton));
 		jobsPage.clickOnViewJobsButton();
 		
@@ -51,13 +61,10 @@ public class PicsArtCareerTests extends PicsArtBaseTest {
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//2.1:Click on "Careers" link
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(userPage.careersLink));
 		userPage.careersLink.click();
 		
 		//2.2:Click the "View Jobs" button
-		PicsArtJobsPage jobsPage = new PicsArtJobsPage(driver);
 		wait.until(ExpectedConditions.visibilityOf(jobsPage.viewJobsButton));
 		jobsPage.clickOnViewJobsButton();
 		
@@ -66,7 +73,6 @@ public class PicsArtCareerTests extends PicsArtBaseTest {
 		jobsPage.continueOnJobsButton.click();
 		
 		//validate that the picsart.com/jobs/vacancies page is opened
-		PicsArtVacanciesPage vacanciesPage = new PicsArtVacanciesPage(driver);
 		vacanciesPage.waitForVacanciespageTitle();
 		Assert.assertTrue(vacanciesPage.vacanciesPageTitle.isDisplayed());
 	}
@@ -81,13 +87,10 @@ public class PicsArtCareerTests extends PicsArtBaseTest {
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//3.1:Click on "Careers" link
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(userPage.careersLink));
 		userPage.careersLink.click();
 		
 		//3.2:Click the "View Jobs" button
-		PicsArtJobsPage jobsPage = new PicsArtJobsPage(driver);
 		wait.until(ExpectedConditions.visibilityOf(jobsPage.viewJobsButton));
 		jobsPage.clickOnViewJobsButton();
 		

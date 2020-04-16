@@ -3,6 +3,7 @@ package com.qa.picsart.test.password;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.qa.picsart.pages.base.PicsArtBasePage;
@@ -11,6 +12,18 @@ import com.qa.picsart.pages.user.PicsArtUserPage;
 import com.qa.picsart.test.base.PicsArtBaseTest;
 
 public class ChangePasswordTests extends PicsArtBaseTest {
+	private PicsArtUserPage userPage;
+	private WebDriverWait wait;
+	private PicsArtBasePage page;
+	private LoginPage loginPage;
+
+	@BeforeClass
+	public void start() {
+		userPage = new PicsArtUserPage(driver);
+		wait = new WebDriverWait(driver, 30);
+		page = new PicsArtBasePage(driver);
+		loginPage = new LoginPage(driver);
+	}
 	
 	@Test 
 	public void testChangePassword () {
@@ -22,8 +35,6 @@ public class ChangePasswordTests extends PicsArtBaseTest {
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//4.1.Click on the user avatar beside "Get the app" button
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(userPage.userAvatar));
 		userPage.clickOnUserAvatar();
 		
@@ -57,12 +68,10 @@ public class ChangePasswordTests extends PicsArtBaseTest {
 		Assert.assertFalse(userPage.userAvatar.isDisplayed());
 		
 		//4.7.Click on the "Log In" button
-		PicsArtBasePage page = new PicsArtBasePage(driver);
 		wait.until(ExpectedConditions.visibilityOf(page.loginButton));
         page.clickOnLoginButton();
         
         //4.8.Fill in the "Username" field with correct username 
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.usernameOrEmailField.click();
         loginPage.usernameOrEmailField.sendKeys("tinat6043@gmail.com");
        
@@ -88,8 +97,6 @@ public class ChangePasswordTests extends PicsArtBaseTest {
 
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//21.1.Click on the user avatar beside "Get the app" button
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(userPage.userAvatar));
 		userPage.clickOnUserAvatar();
 				

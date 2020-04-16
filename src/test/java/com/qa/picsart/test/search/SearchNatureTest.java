@@ -6,9 +6,21 @@ import com.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class SearchNatureTest extends PicsArtBaseTest {
+    private PicsArtUserPage userPage;
+    private WebDriverWait wait;
+    private SearchPage searchPage;
+
+
+    @BeforeClass
+    public void start() {
+        userPage = new PicsArtUserPage(driver);
+        wait = new WebDriverWait(driver, 30);
+        searchPage = new SearchPage(driver);
+    }
 
     @Test
     public void testSearchNature() {
@@ -19,15 +31,12 @@ public class SearchNatureTest extends PicsArtBaseTest {
 
         //Login with correct credentials -- Done in PicsArtBaseTest
         //24.1.Type "nature" in the search field and click enter
-        PicsArtUserPage userPage = new PicsArtUserPage(driver);
-        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(userPage.searchField));
         userPage.searchField.click();
         userPage.searchField.sendKeys("nature");
         userPage.searchField.submit();
 
         //validate that the "All", "Stickers", "Images", "Hashtags" and "Artists" links are displayed
-        SearchPage searchPage = new SearchPage(driver);
         wait.until(ExpectedConditions.elementToBeClickable(searchPage.allLink));
         Assert.assertTrue(searchPage.allLink.isDisplayed());
         wait.until(ExpectedConditions.elementToBeClickable(searchPage.stickersLink));

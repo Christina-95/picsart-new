@@ -7,9 +7,24 @@ import com.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CommunityGuidelinesLinkTest extends PicsArtBaseTest {
+
+     private PicsArtUserPage userPage;
+     private WebDriverWait wait;
+     private CommunityGuidelinesPage communityGuidelinesPage;
+     private CopyrightDisputePolicyPage copyrightDisputePolicyPage;
+
+
+     @BeforeClass
+     public void start() {
+          userPage = new PicsArtUserPage(driver);
+          wait = new WebDriverWait(driver, 30);
+          communityGuidelinesPage = new CommunityGuidelinesPage(driver);
+          copyrightDisputePolicyPage = new CopyrightDisputePolicyPage(driver);
+     }
 
     @Test
    public void testCommunityGuidelinesLink () {
@@ -20,13 +35,10 @@ public class CommunityGuidelinesLinkTest extends PicsArtBaseTest {
 
         //Login with correct credentials -- Done in PicsArtBaseTest
         //22.1.Click in the "Community Guidelines" link
-        PicsArtUserPage userPage = new PicsArtUserPage(driver);
-        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(userPage.communityGuidelinesLink));
         userPage.communityGuidelinesLink.click();
 
         //validate that the Community Guidelines" page is displayed
-        CommunityGuidelinesPage communityGuidelinesPage = new CommunityGuidelinesPage(driver);
         wait.until(ExpectedConditions.visibilityOf(communityGuidelinesPage.communityGuidelinesTitle));
         Assert.assertTrue(communityGuidelinesPage.communityGuidelinesTitle.isDisplayed());
 
@@ -36,7 +48,6 @@ public class CommunityGuidelinesLinkTest extends PicsArtBaseTest {
 
         //validate that the "COPYRIGHT DISPUTE POLICY" page is displayed
         driver.get("https://picsart.com/copyright-dispute-policy");
-        CopyrightDisputePolicyPage copyrightDisputePolicyPage = new CopyrightDisputePolicyPage(driver);
         wait.until(ExpectedConditions.visibilityOf(copyrightDisputePolicyPage.copirightDisputePolicyTitle));
         Assert.assertTrue(copyrightDisputePolicyPage.copirightDisputePolicyTitle.isDisplayed());
     }

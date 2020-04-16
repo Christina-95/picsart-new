@@ -6,9 +6,22 @@ import com.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class ChallengesTest extends PicsArtBaseTest {
+
+    private PicsArtUserPage userPage;
+    private WebDriverWait wait;
+    private ChallengesPage challengesPage;
+
+
+    @BeforeClass
+    public void start() {
+        userPage = new PicsArtUserPage(driver);
+        wait = new WebDriverWait(driver, 30);
+        challengesPage = new ChallengesPage(driver);
+    }
 
     @Test
     public void testChallengesLink() {

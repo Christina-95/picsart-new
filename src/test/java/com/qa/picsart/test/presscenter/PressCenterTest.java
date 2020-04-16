@@ -6,11 +6,23 @@ import com.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 
 public class PressCenterTest extends PicsArtBaseTest {
+    private PicsArtUserPage userPage;
+    private WebDriverWait wait;
+    private PressCenterPage pressCenterPage;
+
+
+    @BeforeClass
+    public void start() {
+        userPage = new PicsArtUserPage(driver);
+        wait = new WebDriverWait(driver, 30);
+        pressCenterPage = new PressCenterPage(driver);
+    }
 
     @Test
     public void testPressKitButton() throws InterruptedException {
@@ -21,15 +33,12 @@ public class PressCenterTest extends PicsArtBaseTest {
 
         //Login with correct credentials -- Done in PicsArtBaseTest
         //25.1.Click on the "About" link and click on the "Press Center"
-        PicsArtUserPage userPage = new PicsArtUserPage(driver);
-        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(userPage.aboutLink));
         userPage.aboutLink.click();
         wait.until(ExpectedConditions.elementToBeClickable(userPage.pressCenterLink));
         userPage.pressCenterLink.click();
 
         //validate that the "PRESS CENTER" page is displayed
-        PressCenterPage pressCenterPage = new PressCenterPage(driver);
         wait.until(ExpectedConditions.visibilityOf(pressCenterPage.pressCenterTitle));
         Assert.assertTrue(pressCenterPage.pressCenterTitle.isDisplayed());
 
