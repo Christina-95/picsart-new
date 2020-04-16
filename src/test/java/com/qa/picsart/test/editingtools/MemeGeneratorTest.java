@@ -17,6 +17,7 @@ public class MemeGeneratorTest extends PicsArtBaseTest {
     private EditingToolsPage editingToolsPage;
     private MemeGeneratorSelectTemplatePage templatePage;
     private MemeGeneratorPage memePage;
+    private WebDriverWait wait;
 
 
     @BeforeClass
@@ -25,6 +26,7 @@ public class MemeGeneratorTest extends PicsArtBaseTest {
         editingToolsPage = new EditingToolsPage(driver);
         templatePage = new MemeGeneratorSelectTemplatePage(driver);
         memePage = new MemeGeneratorPage(driver);
+        wait = new WebDriverWait(driver, 30);
     }
 
     @Test
@@ -37,22 +39,17 @@ public class MemeGeneratorTest extends PicsArtBaseTest {
 
         //Login with correct credentials -- Done in PicsArtBaseTest
         //click on the "Start Editing" button
-        PicsArtUserPage userPage = new PicsArtUserPage(driver);
-        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(userPage.startEditingButton));
         userPage.startEditingButton.click();
 
         //38.1.Click on the "Meme Generator"
-        EditingToolsPage editingToolsPage = new EditingToolsPage(driver);
         wait.until(ExpectedConditions.elementToBeClickable(editingToolsPage.memeGenerator));
         editingToolsPage.memeGenerator.click();
 
         //38.2.Choose one of the templates
-        MemeGeneratorSelectTemplatePage templatePage = new MemeGeneratorSelectTemplatePage(driver);
         templatePage.clickOnRandomTemplate();
 
         //validate that when the "Photo" category is enabled the "Use your image" and suggested photos are displayed
-        MemeGeneratorPage memePage = new MemeGeneratorPage(driver);
         wait.until(ExpectedConditions.visibilityOf(memePage.photoCategory));
         Assert.assertTrue(memePage.photoCategory.isDisplayed());
         Thread.sleep(1000);

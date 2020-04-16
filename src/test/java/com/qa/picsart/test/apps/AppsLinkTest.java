@@ -4,13 +4,25 @@ import com.qa.picsart.test.base.PicsArtBaseTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.qa.picsart.pages.gettheapp.GetTheAppPage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
 
 public class AppsLinkTest extends PicsArtBaseTest {
-	
+
+	private PicsArtUserPage userPage;
+	private GetTheAppPage getTheAppPage;
+	private WebDriverWait wait;
+
+	@BeforeClass
+	public void start() {
+		userPage = new PicsArtUserPage(driver);
+		getTheAppPage = new GetTheAppPage(driver);
+		wait = new WebDriverWait(driver, 30);
+	}
+
 	@Test 
 	public void testAppsLink() {
 		//Test Case ID:17
@@ -21,8 +33,6 @@ public class AppsLinkTest extends PicsArtBaseTest {
 		
 		//Login with correct credentials -- Done in PicsArtBaseTest
 		//17.1.Click on "About" link in the sidebar
-		PicsArtUserPage userPage = new PicsArtUserPage(driver);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(userPage.aboutLink));
 		userPage.aboutLink.click();
 		
@@ -31,7 +41,6 @@ public class AppsLinkTest extends PicsArtBaseTest {
 		userPage.appsLink.click();
 		
 		//17.3.Click on the "Get It Now" button
-		GetTheAppPage getTheAppPage = new GetTheAppPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(getTheAppPage.getItNowButton));
 		getTheAppPage.getItNowButton.click();
 		
