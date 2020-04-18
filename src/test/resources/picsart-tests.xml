@@ -9,196 +9,153 @@
 					<include name="testVacanciesByDepartmentsAndLocation" />
 				</methods>
 			</class>
-
 			<class name="com.qa.picsart.test.apps.AppsLinkTest">
 				<methods>
 					<include name="testAppsLink" />
 				</methods>
 			</class>
-
 			<class name="com.qa.picsart.test.apps.GetTheAppTest">
 				<methods>
 					<include name="testGetTheAppButton" />
 				</methods>
 			</class>
-
-			<class
-				name="com.qa.picsart.test.editingtools.EditingToolsTest">
+			<class name="com.qa.picsart.test.editingtools.EditingToolsTest">
 				<methods>
 					<include name="testEditingTools" />
 					<include name="testRemoveBackground" />
 					<include name="testGoToToolsBtn" />
 				</methods>
 			</class>
-
-			<class
-				name="com.qa.picsart.test.gold.PicsArtGoldStartFreeTrialTest">
+			<class name="com.qa.picsart.test.gold.PicsArtGoldStartFreeTrialTest">
 				<methods>
 					<include name="testPicsArtGoldStartFreeTrialButton" />
 				</methods>
 			</class>
-
 			<class name="com.qa.picsart.test.images.PicsArtImageOptionsTest">
 				<methods>
 					<include name="testImageOptions" />
 				</methods>
 			</class>
-
-			<class
-				name="com.qa.picsart.test.images.PicksImagesOptionsTest">
+			<class name="com.qa.picsart.test.images.PicksImagesOptionsTest">
 				<methods>
 					<include name="testPicksImagesOptions" />
 				</methods>
 			</class>
-
 			<class name="com.qa.picsart.test.store.PicsArtStoreTest">
 				<methods>
 					<include name="testPicsArtStoreLink" />
 				</methods>
 			</class>
-
 			<class name="com.qa.picsart.test.support.PicsArtSupportTest">
 				<methods>
 					<include name="testSupportPageLanguage" />
 				</methods>
 			</class>
-
-			<class
-				name="com.qa.picsart.test.user.ChangeTheNameOptionTest">
+			<class name="com.qa.picsart.test.user.ChangeTheNameOptionTest">
 				<methods>
 					<include name="testChangeNameOption" />
 				</methods>
 			</class>
-
 			<class name="com.qa.picsart.test.user.FollowedArtistTest">
 				<methods>
 					<include name="testFollowedArtistIsDisplayed" />
 				</methods>
 			</class>
-
-			<class
-				name="com.qa.picsart.test.user.SaveToCollectionTest">
+			<class name="com.qa.picsart.test.user.SaveToCollectionTest">
 				<methods>
 					<include name="testSaveToCollectionOption" />
 				</methods>
 			</class>
-
 			<class name="com.qa.picsart.test.user.UserOptionsTest">
 				<methods>
 					<include name="testUserOptions" />
 				</methods>
 			</class>
-
 			<class name="com.qa.picsart.test.user.UserPostsTests">
 				<methods>
 					<include name="testUserPosts" />
 					<include name="testPostedImageOptions" />
 				</methods>
 			</class>
-
-			<class
-				name="com.qa.picsart.test.password.ChangePasswordTests">
+			<class name="com.qa.picsart.test.password.ChangePasswordTests">
 				<methods>
 					<include name="testRetypeNewPassword" />
 				<!--<include name="testChangePassword" /> -->
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.communityguidelines.CommunityGuidelinesLinkTest">
+			<class name="com.qa.picsart.test.communityguidelines.CommunityGuidelinesLinkTest">
 				<methods>
 					<include name="testRetypeNewPassword" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.upwardsbutton.UpwardsButtonTest">
+			<class name="com.qa.picsart.test.upwardsbutton.UpwardsButtonTest">
 				<methods>
 					<include name="testUpwardsArrowFunctionality" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.search.SearchNatureTest">
+			<class name="com.qa.picsart.test.search.SearchNatureTest">
 				<methods>
 					<include name="testSearchNature" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.challenges.ChallengesTest">
+			<class name="com.qa.picsart.test.challenges.ChallengesTest">
 				<methods>
 					<include name="testChallengesLink" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.blog.PicsArtJapanTest">
+			<class name="com.qa.picsart.test.blog.PicsArtJapanTest">
 				<methods>
 					<include name="testPicsArtJapan" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.editingtools.TemplateEditorTest">
+			<class name="com.qa.picsart.test.editingtools.TemplateEditorTest">
 				<methods>
 					<include name="testTemplateEditor" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.editingtools.PixelStretchEffectsTest">
+			<class name="com.qa.picsart.test.editingtools.PixelStretchEffectsTest">
 				<methods>
 					<include name="testPixelStretchEffects" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.editingtools.ChangeBackgroundTest">
+			<class name="com.qa.picsart.test.editingtools.ChangeBackgroundTest">
 				<methods>
 					<include name="testChangeBackground" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.editingtools.SketchEffectsTest">
+			<class name="com.qa.picsart.test.editingtools.SketchEffectsTest">
 				<methods>
 					<include name="testSketchEffects" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.editingtools.LightEffectsTest">
+			<class name="com.qa.picsart.test.editingtools.LightEffectsTest">
 				<methods>
 					<include name="testLightEffects" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.editingtools.DoubleExposureTest">
+			<class name="com.qa.picsart.test.editingtools.DoubleExposureTest">
 				<methods>
 					<include name="testDoubleExposure" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.editingtools.PhotoOverlaysTest">
+			<class name="com.qa.picsart.test.editingtools.PhotoOverlaysTest">
 				<methods>
 					<include name="testPhotoOverlays" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.editingtools.TextEditorTest">
+			<class name="com.qa.picsart.test.editingtools.TextEditorTest">
 				<methods>
 					<include name="testTextEditor" />
 				</methods>
 			</class>
-
-			<class
-					name="com.qa.picsart.test.editingtools.MemeGeneratorTest">
+			<class name="com.qa.picsart.test.editingtools.MemeGeneratorTest">
 				<methods>
 					<include name="testMemeGenerator" />
+				</methods>
+			</class>
+			<class name="com.qa.picsart.test.user.SideBarFunctionsTest">
+				<methods>
+					<include name="testSidebarFunctions" />
 				</methods>
 			</class>
 		</classes>

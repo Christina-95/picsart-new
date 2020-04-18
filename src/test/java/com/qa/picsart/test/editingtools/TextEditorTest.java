@@ -54,18 +54,18 @@ public class TextEditorTest extends PicsArtBaseTest {
         Assert.assertTrue(textEditorPage.AddTextDropDownList.size() <= 3);
         System.out.println(textEditorPage.AddTextDropDownList.size());
 
-        for (int i = 1; i <= textEditorPage.AddTextDropDownList.size(); i++) {
+        for (int i = 0; i <= textEditorPage.AddTextDropDownList.size(); i++) {
             if (i < 2) {
-                String first = textEditorPage.addTextDropDownList(i);
+                String first = textEditorPage.addTextDropDownList(1);
                 Assert.assertEquals(first, "Add a heading");
 
             } else if (i < 3) {
-                String second = textEditorPage.addTextDropDownList(i+1);
+                String second = textEditorPage.addTextDropDownList(2);
                 Assert.assertEquals(second, "Add a subheading");
 
             }
             else {
-              String third = textEditorPage.addTextDropDownList(i+2);
+              String third = textEditorPage.addTextDropDownList(3);
                 Assert.assertEquals(third, "Add a body text");
 
             }

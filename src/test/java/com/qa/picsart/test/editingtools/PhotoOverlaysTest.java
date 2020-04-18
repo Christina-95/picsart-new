@@ -48,12 +48,12 @@ public class PhotoOverlaysTest extends PicsArtBaseTest {
         //36.3.Click on the "More" option
         for (int i = 0; i < photoOverlaysPage.moreOptions.size(); i++) {
             if(i < 4) {
-                photoOverlaysPage.clickOnTheMoreOption(i+1);
+                photoOverlaysPage.clickOnTheMoreOption(1);
             }
             else {
                 JavascriptExecutor js = (JavascriptExecutor) driver;
                 js.executeScript("javascript:window.scrollBy(250,350)");
-                photoOverlaysPage.clickOnTheMoreOption(i+1);
+                photoOverlaysPage.clickOnTheMoreOption(1);
             }
 
             //validate that when the More option is clicked then the "Back" option is displayed

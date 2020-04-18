@@ -64,18 +64,18 @@ public class MemeGeneratorTest extends PicsArtBaseTest {
         Assert.assertTrue(memePage.AddTextDropDownList.size() <= 3);
         System.out.println(memePage.AddTextDropDownList.size());
 
-        for (int i = 1; i <= memePage.AddTextDropDownList.size(); i++) {
+        for (int i = 0; i <= memePage.AddTextDropDownList.size(); i++) {
             if (i <2) {
-                String first = memePage.addTextDropDownList(i);
+                String first = memePage.addTextDropDownList(1);
                 Assert.assertEquals(first, "Add a heading");
 
             } else if (i<3) {
-                String second = memePage.addTextDropDownList(i+1);
+                String second = memePage.addTextDropDownList(2);
                 Assert.assertEquals(second, "Add a subheading");
 
             }
             else {
-                String third = memePage.addTextDropDownList(i+2);
+                String third = memePage.addTextDropDownList(3);
                 Assert.assertEquals(third, "Add a body text");
             }
         }
@@ -86,21 +86,21 @@ public class MemeGeneratorTest extends PicsArtBaseTest {
         memePage.adjustOption.click();
         Thread.sleep(2000);
         Assert.assertTrue(memePage.adjustOptionsList.size()<=5);
-        for (int i = 1; i < memePage.adjustOptionsList.size(); i++) {
+        for (int i = 0; i < memePage.adjustOptionsList.size(); i++) {
             if (i<2) {
-                Assert.assertEquals(memePage.adjustOptions(i),"Saturation\n" + "0");
+                Assert.assertEquals(memePage.adjustOptions(1),"Saturation\n" + "0");
             }
             else if (i<3) {
-                Assert.assertEquals(memePage.adjustOptions(i+1),"Brightness\n" + "0");
+                Assert.assertEquals(memePage.adjustOptions(2),"Brightness\n" + "0");
             }
             else if (i<4) {
-                Assert.assertEquals(memePage.adjustOptions(i+2),"Contrast\n" + "0");
+                Assert.assertEquals(memePage.adjustOptions(3),"Contrast\n" + "0");
             }
             else if (i<5) {
-                Assert.assertEquals(memePage.adjustOptions(i+3),"Zoom\n" + "0");
+                Assert.assertEquals(memePage.adjustOptions(4),"Zoom\n" + "0");
             }
             else {
-                Assert.assertEquals(memePage.adjustOptions(i+4),"Rotate\n" + "0");
+                Assert.assertEquals(memePage.adjustOptions(5),"Rotate\n" + "0");
             }
         }
     }

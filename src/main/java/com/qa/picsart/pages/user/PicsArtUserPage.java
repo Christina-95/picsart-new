@@ -1,8 +1,10 @@
 package com.qa.picsart.pages.user;
 
+import java.util.List;
 import java.util.Random;
 
 import com.qa.picsart.pages.support.PicsArtSupportPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -76,7 +78,8 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	protected final String CHALLENGES_LINK = "//a[contains(@data-js-ga-click,'top-menu open challenges')]";
 	protected final String BLOG_LINK = "//a[@data-js-active='blog']";
 	public String POST_LINK = "//a[contains(.,'"+i+++"''Posts')]";
-
+	protected final String SIDEBAR_FUNCTIONS = "//ul[@class='c-accordion accordion sidebar-list']/*";
+	protected final String FOOTER_LINKS = "//ul[@class='footer-links-list']/*";
 
 
 	@FindBy (xpath = ARTISTS_LINK)
@@ -229,6 +232,11 @@ public class PicsArtUserPage extends PicsArtBasePage{
 	@FindBy (xpath = BLOG_LINK)
 	public WebElement blogLink;
 
+	@FindBy (xpath = SIDEBAR_FUNCTIONS)
+	public List <WebElement> sidebarFunctions;
+
+	@FindBy (xpath = FOOTER_LINKS)
+	public List <WebElement> footerLinks;
 
 	
 	
@@ -334,5 +342,14 @@ public class PicsArtUserPage extends PicsArtBasePage{
 		searchField.sendKeys("anime");
 		return new PicsArtUserPage(driver);
 	}
-	
+
+	public String sideBarFunctions (int i) {
+		String functions = driver.findElement(By.xpath("//ul[@class='c-accordion accordion sidebar-list']/*["+i+"]")).getText();
+		return functions;
+	}
+
+	public String footerLinks(int i)  {
+		String links = driver.findElement(By.xpath("//ul[@class='footer-links-list']/*["+i+"]")).getText();
+		return links;
+	}
 }
