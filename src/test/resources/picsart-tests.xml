@@ -158,6 +158,11 @@
 					<include name="testSidebarFunctions" />
 				</methods>
 			</class>
+			<class name="com.qa.picsart.test.search.SearchResultsTest">
+				<methods>
+					<include name="testSearchResults" />
+				</methods>
+			</class>
 		</classes>
 	</test>
 </suite>

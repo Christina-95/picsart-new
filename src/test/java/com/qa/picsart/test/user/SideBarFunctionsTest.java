@@ -20,6 +20,7 @@ public class SideBarFunctionsTest extends PicsArtBaseTest {
 
     @Test
     public void testSidebarFunctions() {
+        //Test Case ID:39
         //Given that the user is on the PicsArt.com page,
         //when the user logs in, then the following functions are displayed:
         //Feed, Explore, PicsArt Gold, Categories, Hashtags,

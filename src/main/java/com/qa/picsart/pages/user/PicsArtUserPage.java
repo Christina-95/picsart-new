@@ -352,4 +352,10 @@ public class PicsArtUserPage extends PicsArtBasePage{
 		String links = driver.findElement(By.xpath("//ul[@class='footer-links-list']/*["+i+"]")).getText();
 		return links;
 	}
+
+	public void enterSearchItem(String item) {
+		WebElement searchBar = driver.findElement(By.xpath("//input[@id='search-input']"));
+		searchBar.click();
+		searchBar.sendKeys(item);
+	}
 }
