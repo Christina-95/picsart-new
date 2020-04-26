@@ -7,9 +7,9 @@ import org.testng.annotations.Test;
 
 import com.qa.picsart.pages.artists.ArtistsPage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 
-public class FollowedArtistTest extends PicsArtBaseTest{
+public class FollowedArtistTest extends BaseLoginTest {
 	
 	@Test 
 	public void testFollowedArtistIsDisplayed() throws InterruptedException {

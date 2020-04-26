@@ -9,9 +9,9 @@ import org.testng.annotations.Test;
 import com.qa.picsart.pages.base.PicsArtBasePage;
 import com.qa.picsart.pages.login.LoginPage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 
-public class ChangePasswordTests extends PicsArtBaseTest {
+public class ChangePasswordTests extends BaseLoginTest {
 	private PicsArtUserPage userPage;
 	private WebDriverWait wait;
 	private PicsArtBasePage page;

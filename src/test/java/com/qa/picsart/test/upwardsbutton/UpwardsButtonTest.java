@@ -1,14 +1,14 @@
 package com.qa.picsart.test.upwardsbutton;
 
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class UpwardsButtonTest extends PicsArtBaseTest {
+public class UpwardsButtonTest extends BaseLoginTest {
 
     @Test
     public void testUpwardsArrowFunctionality() {

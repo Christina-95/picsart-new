@@ -1,4 +1,4 @@
-package com.qa.picsart.test.guest;
+package com.qa.picsart.test.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeTest;
 import java.io.IOException;
 import java.util.Properties;
 
-public class GuestBaseTest {
+public class BaseTest {
     protected static final String HOME_PAGE_URL = "https://picsart.com";
     protected Properties properties;
     protected WebDriver driver;

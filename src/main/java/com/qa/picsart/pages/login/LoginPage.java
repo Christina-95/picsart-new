@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 
 import com.qa.picsart.pages.base.PicsArtBasePage;
 
+import java.util.Random;
+
 public class LoginPage extends PicsArtBasePage {
 
 	public LoginPage(WebDriver driver) {
@@ -16,6 +18,7 @@ public class LoginPage extends PicsArtBasePage {
 	protected final String PASSWORD_FIELD = "//input[@id='password']";
 	protected final String SIGN_IN_BUTTON = "//div[@type='submit'][text()='Sign in']";
 	protected final String ERROR_MESSAGE = "//span[contains(text(),'Connection error')]";
+	protected final String INCORRECT_PASSWORD_FORMAT_ERROR = "//span[contains(text(),'Incorrect password format')]";
 	
 	
 	@FindBy (xpath = USERNAME_OR_EMAIL_FIELD)
@@ -29,7 +32,18 @@ public class LoginPage extends PicsArtBasePage {
 	
 	@FindBy (xpath = ERROR_MESSAGE)
 	public WebElement errorMessage;
+
+	@FindBy (xpath = INCORRECT_PASSWORD_FORMAT_ERROR)
+	public WebElement incorrectPasswordFormatErr;
 	
-	
+	public void enterEmailInUsernameField(String email) {
+		usernameOrEmailField.click();
+		usernameOrEmailField.sendKeys(email);
+	}
+
+	public void enterPasswordPasswordField(String password) {
+		passwordField.click();
+		passwordField.sendKeys(password);
+	}
 
 }

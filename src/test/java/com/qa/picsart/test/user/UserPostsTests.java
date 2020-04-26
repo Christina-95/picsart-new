@@ -7,9 +7,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 
-public class UserPostsTests extends PicsArtBaseTest{
+public class UserPostsTests extends BaseLoginTest {
 	
 	@Test
 	public void testUserPosts() {

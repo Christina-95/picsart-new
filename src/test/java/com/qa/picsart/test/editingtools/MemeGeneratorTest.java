@@ -4,14 +4,14 @@ import com.qa.picsart.pages.editingtools.EditingToolsPage;
 import com.qa.picsart.pages.editingtools.MemeGeneratorPage;
 import com.qa.picsart.pages.editingtools.MemeGeneratorSelectTemplatePage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class MemeGeneratorTest extends PicsArtBaseTest {
+public class MemeGeneratorTest extends BaseLoginTest {
 
     private PicsArtUserPage userPage;
     private EditingToolsPage editingToolsPage;

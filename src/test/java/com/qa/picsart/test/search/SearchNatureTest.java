@@ -2,14 +2,14 @@ package com.qa.picsart.test.search;
 
 import com.qa.picsart.pages.search.SearchPage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SearchNatureTest extends PicsArtBaseTest {
+public class SearchNatureTest extends BaseLoginTest {
     private PicsArtUserPage userPage;
     private WebDriverWait wait;
     private SearchPage searchPage;

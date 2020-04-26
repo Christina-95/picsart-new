@@ -8,9 +8,9 @@ import org.testng.annotations.Test;
 
 import com.qa.picsart.pages.gold.PicsArtGoldPage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 
-public class PicsArtGoldStartFreeTrialTest extends PicsArtBaseTest{
+public class PicsArtGoldStartFreeTrialTest extends BaseLoginTest {
 	private PicsArtUserPage userPage;
 	private WebDriverWait wait;
 	private PicsArtGoldPage goldPage;

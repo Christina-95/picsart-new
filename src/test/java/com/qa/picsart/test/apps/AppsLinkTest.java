@@ -1,6 +1,6 @@
 package com.qa.picsart.test.apps;
 
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import com.qa.picsart.pages.gettheapp.GetTheAppPage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
 
-public class AppsLinkTest extends PicsArtBaseTest {
+public class AppsLinkTest extends BaseLoginTest {
 
 	private PicsArtUserPage userPage;
 	private GetTheAppPage getTheAppPage;

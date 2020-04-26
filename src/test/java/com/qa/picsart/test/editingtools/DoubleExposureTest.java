@@ -4,13 +4,13 @@ import com.qa.picsart.pages.editingtools.DoubleExposurePage;
 import com.qa.picsart.pages.editingtools.DoubleExposureUploadImagePage;
 import com.qa.picsart.pages.editingtools.EditingToolsPage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class DoubleExposureTest extends PicsArtBaseTest {
+public class DoubleExposureTest extends BaseLoginTest {
 
     @Test
     public void testDoubleExposure() throws InterruptedException {

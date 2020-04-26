@@ -1,13 +1,13 @@
 package com.qa.picsart.test.user;
 
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SideBarFunctionsTest extends PicsArtBaseTest {
+public class SideBarFunctionsTest extends BaseLoginTest {
 
     private WebDriverWait wait;
     private PicsArtUserPage userPage;

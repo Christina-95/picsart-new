@@ -3,14 +3,14 @@ package com.qa.picsart.test.blog;
 import com.qa.picsart.pages.blog.BlogPage;
 import com.qa.picsart.pages.blog.PicsArtJapanPage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class PicsArtJapanTest extends PicsArtBaseTest {
+public class PicsArtJapanTest extends BaseLoginTest {
 
     private PicsArtUserPage userPage;
     private BlogPage blogPage;

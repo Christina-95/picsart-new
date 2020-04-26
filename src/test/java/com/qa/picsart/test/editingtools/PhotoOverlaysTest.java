@@ -4,7 +4,7 @@ import com.qa.picsart.pages.editingtools.EditingToolsPage;
 import com.qa.picsart.pages.editingtools.PhotoOverlaysPage;
 import com.qa.picsart.pages.editingtools.UploadSelectImagePage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,7 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class PhotoOverlaysTest extends PicsArtBaseTest {
+public class PhotoOverlaysTest extends BaseLoginTest {
 
     @Test
     public void testPhotoOverlays() throws InterruptedException {

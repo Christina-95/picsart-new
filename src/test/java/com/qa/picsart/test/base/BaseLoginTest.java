@@ -17,7 +17,7 @@ import com.qa.picsart.pages.login.LoginPage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
 
 
-public class PicsArtBaseTest {
+public class BaseLoginTest {
 	
 	protected static final String HOME_PAGE_URL = "https://picsart.com";
 	protected Properties properties;
@@ -49,10 +49,10 @@ public class PicsArtBaseTest {
 	LoginPage loginPage = new LoginPage(driver);
 	wait.until(ExpectedConditions.visibilityOf(loginPage.usernameOrEmailField));
 	loginPage.usernameOrEmailField.click();
-	loginPage.usernameOrEmailField.sendKeys("XXX@gmail.com");
+	loginPage.usernameOrEmailField.sendKeys("xxxxxx@gmail.com");
 	wait.until(ExpectedConditions.visibilityOf(loginPage.passwordField));
 	loginPage.passwordField.click();
-	loginPage.passwordField.sendKeys("12345678");
+	loginPage.passwordField.sendKeys("");
 	
 	//click on the "Sign In " button
 	wait.until(ExpectedConditions.visibilityOf(loginPage.signInButton));

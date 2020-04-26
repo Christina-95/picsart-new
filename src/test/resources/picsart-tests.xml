@@ -168,6 +168,11 @@
 					<include name="testProducts" />
 				</methods>
 			</class>
+			<class name="com.qa.picsart.test.login.LoginTests">
+				<methods>
+					<include name="testPasswordError" />
+				</methods>
+			</class>
 		</classes>
 	</test>
 </suite>

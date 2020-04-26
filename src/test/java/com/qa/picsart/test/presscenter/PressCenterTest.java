@@ -2,7 +2,7 @@ package com.qa.picsart.test.presscenter;
 
 import com.qa.picsart.pages.presscenter.PressCenterPage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 
-public class PressCenterTest extends PicsArtBaseTest {
+public class PressCenterTest extends BaseLoginTest {
     private PicsArtUserPage userPage;
     private WebDriverWait wait;
     private PressCenterPage pressCenterPage;

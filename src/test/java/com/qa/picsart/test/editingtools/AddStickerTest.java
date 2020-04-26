@@ -4,13 +4,13 @@ import com.qa.picsart.pages.editingtools.AddStickerPage;
 import com.qa.picsart.pages.editingtools.EditingToolsPage;
 import com.qa.picsart.pages.editingtools.UploadSelectImagePage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AddStickerTest extends PicsArtBaseTest {
+public class AddStickerTest extends BaseLoginTest {
 
     @Test
     public void testAddSticker() {

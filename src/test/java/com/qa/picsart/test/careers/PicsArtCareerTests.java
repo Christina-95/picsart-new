@@ -11,9 +11,9 @@ import org.testng.annotations.Test;
 import com.qa.picsart.pages.jobs.PicsArtJobsPage;
 import com.qa.picsart.pages.jobs.vacancies.PicsArtVacanciesPage;
 import com.qa.picsart.pages.user.PicsArtUserPage;
-import com.qa.picsart.test.base.PicsArtBaseTest;
+import com.qa.picsart.test.base.BaseLoginTest;
 
-public class PicsArtCareerTests extends PicsArtBaseTest {
+public class PicsArtCareerTests extends BaseLoginTest {
 	private WebDriverWait wait;
 	private PicsArtUserPage userPage;
 	private PicsArtJobsPage jobsPage;
