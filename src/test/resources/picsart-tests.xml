@@ -163,6 +163,11 @@
 					<include name="testSearchResults" />
 				</methods>
 			</class>
+			<class name="com.qa.picsart.test.guest.ProductsTest">
+				<methods>
+					<include name="testProducts" />
+				</methods>
+			</class>
 		</classes>
 	</test>
 </suite>
